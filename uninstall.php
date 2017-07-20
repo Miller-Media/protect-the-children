@@ -4,7 +4,7 @@
  *
  * @package  Protect the Children
  * @author   Matt Miller
- * @since    {build_version}
+ * @since    1.0.0
  */
 
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) or ! WP_UNINSTALL_PLUGIN ) {

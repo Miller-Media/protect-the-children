@@ -1,9 +1,9 @@
 <?php
 /**
- * Plugin Name: Protect the Children
+ * Plugin Name: Protect the Children!
  * Depends: lib-modern-framework
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version: 0.0.0
+ * Version: 1.0.0
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
  */

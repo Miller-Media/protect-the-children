@@ -5,6 +5,7 @@ return <<<'JSON'
     "author": "Matt Miller",
     "name": "Protect the Children",
     "namespace": "MillerMedia\\ProtectThe",
-    "slug": "millermedia-protectthe"
+    "slug": "millermedia-protectthe",
+    "version": "1.0.0"
 }
 JSON;
