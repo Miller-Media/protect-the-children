@@ -1,4 +1,4 @@
-# protect-the-children
+# Protect the Children!
 A WordPress plugin to allow the ability to protect child posts/pages of posts/pages that are password protected
 
 This plugin depends on a bundled version of the Modern WordPress framework (http://github.com/Miller-Media/modern-wordpress).
