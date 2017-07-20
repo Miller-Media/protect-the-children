@@ -1,0 +1,11 @@
+{
+    "name": "millermedia/protectthe",
+    "description": "Protect the Children",
+    "type": "project",
+    "require": {},
+	"autoload": {
+		"psr-4": {
+		  "MillerMedia\\ProtectThe\\": "classes/"
+		}
+	}
+}

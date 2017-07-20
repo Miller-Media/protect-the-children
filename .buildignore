@@ -1,0 +1,12 @@
+.buildignore
+builds
+.git
+.gitignore
+.svn
+composer.json
+composer.lock
+phpunit.xml.dist
+tests
+bin
+vendor/bin
+
