@@ -4,16 +4,15 @@ div#protect-children-div {
     border-bottom: 1px solid #dddddd;
 }
 
-
- #protect-children-div:before {
-     content: "\f223";
-     color: #82878c;
-     font: 400 20px/1 dashicons;
-     speak: none;
-     display: inline-block;
-     margin-left: -1px;
-     padding-right: 3px;
-     vertical-align: top;
-     -webkit-font-smoothing: antialiased;
-     -moz-osx-font-smoothing: grayscale;
+#protect-children-div:before {
+    content: "\f223";
+    color: #82878c;
+    font: 400 20px/1 dashicons;
+    speak: none;
+    display: inline-block;
+    margin-left: -1px;
+    padding-right: 3px;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
