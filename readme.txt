@@ -1,8 +1,9 @@
 === Protect the Children! ===
 Contributors: (this should be a list of wordpress.org userid's)
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
-Tested up to: 4.8
-Stable tag: 1.0.0
+Tested up to: 4.9.4
+Stable tag: 1.0.1
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,7 +13,7 @@ Easily password protect the child pages/posts of a post/page that is password pr
 
 Do you have a password protected post or page that has child pages? Currently, you have to password protect each of these pages individually but, with this simple and efficient plugin, you can automatically password protect a page and all of it's children automatically with the click of a button.
 
-Once you choose the 'Visiblitiy' option on a post and update it to 'Password Protected', you will be given a checkbox where you can opt into protecting all of that post's children.
+Once you choose the 'Visibility' option on a post and update it to 'Password Protected', you will be given a checkbox where you can opt into protecting all of that post's children.
 
 PROTECT THE CHILDREN!
 
@@ -31,3 +32,8 @@ PROTECT THE CHILDREN!
 
 = 1.0 =
 * The initial public release!
+
+= 1.0.1 =
+* Tested and confirmed compatibility for PHP 7.2
+* Tested and confirmed compatbility with WordPress 4.9.4
+* Removed support for PHP versions lower than 5.6
