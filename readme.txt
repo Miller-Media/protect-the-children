@@ -1,5 +1,5 @@
 === Protect the Children! ===
-Contributors: (this should be a list of wordpress.org userid's)
+Contributors: millermedianow
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
 Tested up to: 4.9.4
 Stable tag: 1.0.1
