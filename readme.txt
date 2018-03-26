@@ -27,6 +27,7 @@ PROTECT THE CHILDREN!
 
 1. Before changing to 'Password Protected'
 2. After changing to 'Password Protected' (note the checkbox directly above the Publish button)
+3. Admin screen for child post when being protected by parent
 
 == Changelog ==
 
