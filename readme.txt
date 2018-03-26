@@ -2,7 +2,7 @@
 Contributors: millermedianow
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
 Tested up to: 4.9.4
-Stable tag: 1.0.1
+Stable tag: 1.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,10 +30,17 @@ PROTECT THE CHILDREN!
 
 == Changelog ==
 
-= 1.0 =
-* The initial public release!
+= 1.2 = (3/25/18)
+* Child post displays password protected status in admin when its parent is protecting children.
+* Misc code cleanup
+
+= 1.1 =
+* All posts (parent and children) are now unlocked by entering the password on one of those protected pages.
 
 = 1.0.1 =
 * Tested and confirmed compatibility for PHP 7.2
 * Tested and confirmed compatbility with WordPress 4.9.4
 * Removed support for PHP versions lower than 5.6
+
+= 1.0 =
+* The initial public release!

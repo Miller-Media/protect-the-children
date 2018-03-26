@@ -16,3 +16,17 @@ div#protect-children-div {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.password-protect-admin-notice{
+    font-size:12px;
+    padding-left:20px;
+}
+
+.password-protect-admin-notice:before{
+    font: 400 14px/1 dashicons;
+    padding-right:5px;
+}
+
+.password-protect-admin-notice:before{
+    content: "\f348";
+}
