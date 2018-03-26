@@ -7,6 +7,10 @@
  * Author URI: www.millermedia.io
  */
 
+/**
+ * @todo Adjustment for expiration date, etc.
+ */
+
 if (version_compare(PHP_VERSION, '5.6', '<')) {
     add_action('admin_notices', function () {
         echo "<div class=\"error\"><p>" . __('Protect the Children requires PHP 5.6 and greater to function properly. Please upgrade PHP or deactivate Protect the Children.', 'protect-the-children') . "</p></div>";
