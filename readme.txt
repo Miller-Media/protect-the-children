@@ -31,6 +31,10 @@ PROTECT THE CHILDREN!
 
 == Changelog ==
 
+= 1.2.1 = (3/26/18)
+* Performance improvements
+* Bug fix for parent post link
+
 = 1.2 = (3/25/18)
 * Child post displays password protected status in admin when its parent is protecting children.
 * Misc code cleanup
