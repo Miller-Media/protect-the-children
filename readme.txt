@@ -2,7 +2,7 @@
 Contributors: millermedianow
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
 Tested up to: 4.9.4
-Stable tag: 1.2
+Stable tag: 1.2.1
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
