@@ -2,6 +2,7 @@
 
 /**
  * @todo Convert this code into a class
+ * @todo On edit.php page, need to filter only children posts of password protected parents (not all child posts)
  */
 
 /**
@@ -65,10 +66,35 @@ add_action('post_submitbox_misc_actions', function ($post) {
 
 add_action('admin_init', function () {
     // Abort on ajax requests
-    if ( wp_doing_ajax() )
+    if (wp_doing_ajax())
         return;
 
     global $pagenow;
+
+    // On post list page
+    if ('edit.php' === $pagenow) {
+        ob_start(function ($buffer) {
+
+            // @todo Not working yet below
+
+            // Find children posts
+            if (preg_match_all('/(<tr id="post-)(\d*?)(".*? level-1.*?>)/', $buffer, $matches)) {
+
+                $child_post_id = $matches[2];
+                $parent_post_id = wp_get_post_parent_id($child_post_id);
+
+                // Check if child post is protected
+                if (protectTheChildrenEnabled($parent_post_id)) {
+                    $preg_pattern = sprintf('/(<\/strong>\n*<div.*?inline_%d">)/i', $child_post_id);
+                    $buffer = preg_replace($preg_pattern, ' — <span class="post-state">Password protected by parent</span>$1', $buffer);
+                }
+
+            }
+
+            return $buffer;
+
+        });
+    }
 
     // On single post edit page
     if ('post.php' === $pagenow && isset($_GET['post'])) {
