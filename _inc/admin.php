@@ -64,12 +64,16 @@ add_action('post_submitbox_misc_actions', function ($post) {
  */
 
 add_action('admin_init', function () {
-    if (!defined('DOING_AJAX') || !DOING_AJAX)
-        global $pagenow;
+    // Abort on ajax requests
+    if ( wp_doing_ajax() )
+        return;
 
-    ob_start(function ($buffer) use ($pagenow) {
+    global $pagenow;
 
-        if ('post.php' === $pagenow && isset($_GET['post'])) {
+    // On single post edit page
+    if ('post.php' === $pagenow && isset($_GET['post'])) {
+        ob_start(function ($buffer) {
+
             $post = get_post($_GET['post']);
 
             // Check if it is a child post and if the parent post has a password set
@@ -83,12 +87,12 @@ add_action('admin_init', function () {
 
                 // Add 'Password protect by parent post' notice under visibility section
                 $regex_pattern = '/(<\/div>)(\n*|.*)(<\!-- \.misc-pub-section -->)(\n*|.*)(<div class="misc-pub-section curtime misc-pub-curtime">)/i';
-                $admin_edit_link = sprintf(admin_url('post.php?post=%d&action=edit'), $post_parent);
+                $admin_edit_link = sprintf(admin_url('post.php?post=%d&action=edit'), $parent_id);
                 $update_pattern = sprintf('<br><span class="wp-media-buttons-icon password-protect-admin-notice">Password protected by <a href="%s">parent post</a></span>$1$2$3$4$5', $admin_edit_link);
                 $buffer = preg_replace($regex_pattern, $update_pattern, $buffer);
             }
-        }
 
-        return $buffer;
-    });
+            return $buffer;
+        });
+    }
 });
