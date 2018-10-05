@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Protect the Children!
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version: 1.2.1
+ * Version: 1.2.2
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
  */
@@ -32,12 +32,12 @@ require_once(PTC_PLUGIN_PATH . '_inc/admin.php');
 
 add_action('template_redirect', function () {
     $post_id = get_the_ID();
-    $parent_id = wp_get_post_parent_id($post_id);
+    $parent_ids = get_post_ancestors($post_id);
 
-    if (!$parent_id)
+    if (!$parent_ids || empty($parent_ids))
         return;
 
-    $parent_post = protectTheChildrenEnabled($parent_id);
+    $parent_post = protectTheChildrenEnabled($parent_ids);
 
     if (!$parent_post)
         return;
