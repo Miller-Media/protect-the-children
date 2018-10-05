@@ -1,8 +1,8 @@
 === Protect the Children! ===
 Contributors: millermedianow
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
-Tested up to: 4.9.4
-Stable tag: 1.2.1
+Tested up to: 4.9.8
+Stable tag: 1.2.2
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -11,9 +11,9 @@ Easily password protect the child pages/posts of a post/page that is password pr
 
 == Description ==
 
-Do you have a password protected post or page that has child pages? Currently, you have to password protect each of these pages individually but, with this simple and efficient plugin, you can automatically password protect a page and all of it's children automatically with the click of a button.
+Do you have a password protected post or page that has child (and grandchild) pages? Currently, you have to password protect each of these pages individually but, with this simple and efficient plugin, you can automatically password protect a page and all of it's children automatically with the click of a button.
 
-Once you choose the 'Visibility' option on a post and update it to 'Password Protected', you will be given a checkbox where you can opt into protecting all of that post's children.
+Once you choose the 'Visibility' option on a post and update it to 'Password Protected', you will be given a checkbox where you can opt into protecting all of that post's children and grandchildren.
 
 PROTECT THE CHILDREN!
 
@@ -30,6 +30,10 @@ PROTECT THE CHILDREN!
 3. Admin screen for child post when being protected by parent
 
 == Changelog ==
+
+= 1.2.2 =
+* Support for password protection of grandchildren/nested child posts
+* Additional display on the post list screen to specify protected child posts
 
 = 1.2.1 =
 * Performance improvements
