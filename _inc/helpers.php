@@ -57,7 +57,7 @@ function processPosts($post)
     if (!isPasswordProtected($post))
         return false;
 
-    if ( get_post_meta($post->ID, '_protect_children', true) == "on" )
+    if ( get_post_meta($post->ID, 'protect_children', true)  )
         return $post;
 
     return false;
