@@ -1,3 +1,8 @@
+/**
+ * This code is for non-gutenberg editor
+ * 
+ */
+
 PROTECT_THE_CHILDREN = {} || PROTECT_THE_CHILDREN;
 
 PROTECT_THE_CHILDREN = {
@@ -7,16 +12,23 @@ PROTECT_THE_CHILDREN = {
 
     onChange: function () {
 
-        jQuery('div#post-visibility-select input[type="radio"]').on('change', function () {
-            PROTECT_THE_CHILDREN.showOption(jQuery(this).val());
+        jQuery('.edit-post-post-visibility .edit-post-post-visibility__toggle').on('click', function () {
+            PROTECT_THE_CHILDREN.onVisibilityPopupDisplay();
         });
 
     },
 
+    onVisibilityPopupDisplay: function () {
+
+        jQuery('.editor-post-visibility__choice input[type="radio"]').on('change', function () {
+            PROTECT_THE_CHILDREN.showOption(jQuery(this).val());
+        });
+
+    },
     showOption: function (option_value) {
 
         if (option_value == "password" && jQuery('div#protect-children-div').length == 0)
-            jQuery('div.misc-pub-curtime').after('<div id="protect-children-div"><input type="checkbox" name="protect-children" /><strong>Password Protect</strong> all child posts</div>');
+            jQuery('#editor-post-visibility__dialog-password-input-0').after('<div id="protect-children-div"><input type="checkbox" name="protect_children" /><strong>Password Protect</strong> all child posts</div>');
 
         if (option_value != "password" && jQuery('div#protect-children-div').length > 0)
             jQuery('div#protect-children-div').remove();
@@ -24,8 +36,3 @@ PROTECT_THE_CHILDREN = {
     }
 };
 
-jQuery(document).ready(function () {
-
-    PROTECT_THE_CHILDREN._init();
-
-});

@@ -14,9 +14,23 @@
 add_action('admin_enqueue_scripts', function () {
 
     wp_enqueue_style('ptc-admin–css', PTC_PLUGIN_URL . 'assets/css/admin.css');
-    wp_enqueue_script('ptc-admin-js', PTC_PLUGIN_URL . 'assets/js/admin.js');
+
+    // load of gutenberg is disabled
+    // if( !function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() )
+    //     wp_enqueue_script('ptc-admin-js', PTC_PLUGIN_URL . 'assets/js/admin.js');
 
 });
+
+function myguten_enqueue() {
+
+    // wp_enqueue_script('ptc-admin-js', PTC_PLUGIN_URL . 'assets/js/admin.js');
+
+    // wp_enqueue_script(
+    //     'myguten-script',
+    //     plugins_url( 'myguten.js', __FILE__ )
+    // );
+}
+add_action( 'enqueue_block_editor_assets', 'myguten_enqueue' );
 
 /**
  * Handle new admin option to password protect child posts
@@ -24,7 +38,8 @@ add_action('admin_enqueue_scripts', function () {
  * @return void
  */
 
-add_action('save_post', function ($post_id) {
+add_action( 'save_post', 'ptc_save_post_meta', 10, 3 );
+function ptc_save_post_meta($post_id, $post, $update) {
 
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE)
         return;
@@ -32,14 +47,19 @@ add_action('save_post', function ($post_id) {
     if (!current_user_can('edit_post', $post_id))
         return;
 
-    $protect_children = isset($_POST['protect-children']) && $_POST['protect-children'] == "on" ? "on" : "off";
 
-    update_post_meta($post_id, '_protect_children', $protect_children);
+    if( isset($_POST['protect_children']) && $_POST['protect_children'] ) {
+        $protect_children = "1";
+    }
+    else 
+        $protect_children =  "";
 
-});
+    update_post_meta($post_id, 'protect_children', $protect_children);
+
+};
 
 /**
- * Add the option to protect child posts
+ * Add the option to protect child posts - for classic editor
  *
  * @return void
  */
@@ -49,9 +69,22 @@ add_action('post_submitbox_misc_actions', function ($post) {
     $post_type = $post->post_type;
 
     if (isPasswordProtected($post)) {
-        $checked = get_post_meta($post->ID, '_protect_children', true) == "on" ? "checked" : "";
-        echo "<div id=\"protect-children-div\"><input type=\"checkbox\" " . $checked . " name=\"protect-children\" /><strong>Password Protect</strong> all child posts</div>";
+        $checked = get_post_meta($post->ID, 'protect_children', true) ? "checked" : "";
+        echo "<div id=\"protect-children-div\"><input type=\"checkbox\" " . $checked . " name=\"protect_children\" /><strong>Password Protect</strong> all child posts</div>";
     }
+
+});
+
+/**
+ * Register post meta field for Gutenberg post updates
+ */
+add_action('init', function () {
+
+    register_post_meta( 'page', 'protect_children', array(
+        'show_in_rest' => true,
+        'single' => true,
+        'type' => 'boolean',
+    ) );
 
 });
 
@@ -127,4 +160,20 @@ add_action('admin_init', function () {
             return $buffer;
         });
     }
+
+
 });
+
+
+/**
+ * Include Gutenberg specific script to add post editor checkbox in post status area.
+ */
+
+function enqueue_block_editor_assets() {
+    wp_enqueue_script(
+        'myguten-script',
+        PTC_PLUGIN_URL . 'build/index.js',
+        array( 'wp-blocks', 'wp-element', 'wp-components' )
+    );
+}
+add_action( 'enqueue_block_editor_assets', 'enqueue_block_editor_assets' );

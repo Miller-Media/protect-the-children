@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Protect the Children!
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version: 1.2.3
+ * Version: 1.3
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
  */
@@ -10,6 +10,9 @@
 /**
  * @todo Adjustment for expiration date, etc.
  */
+
+if (!defined('PROTECT_THE_CHILDREN_PLUGIN_VERSION'))
+    define('PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.3');
 
 if (version_compare(PHP_VERSION, '5.6', '<')) {
     add_action('admin_notices', function () {
@@ -20,6 +23,7 @@ if (version_compare(PHP_VERSION, '5.6', '<')) {
 
 define('PTC_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('PTC_PLUGIN_URL', plugin_dir_url(__FILE__));
+
 
 require_once(PTC_PLUGIN_PATH . '_inc/helpers.php');
 require_once(PTC_PLUGIN_PATH . '_inc/admin.php');
@@ -60,3 +64,27 @@ add_action('template_redirect', function () {
     });
 
 });
+
+/**
+ * Upgrade meta key for older versions
+ */
+function PTC_update_db_check() {
+
+    if (get_option( 'PTC_plugin_version', '' ) != PROTECT_THE_CHILDREN_PLUGIN_VERSION) {
+
+        $password_pages = get_pages( array( 'meta_key' => '_protect_children', 'meta_value' => 'on' ) );
+
+        foreach( $password_pages as $page ) {      
+            update_post_meta( $page->ID, 'protect_children', '1' );
+            delete_post_meta( $page->ID, '_protect_children');
+        }   
+    }
+
+    update_option('PTC_plugin_version', PROTECT_THE_CHILDREN_PLUGIN_VERSION);
+}
+add_action( 'plugins_loaded', 'PTC_update_db_check' );
+
+/**
+ * Set version number and check for updates if necessary, on activation
+ */
+register_activation_hook(__FILE__, 'PTC_update_db_check');
