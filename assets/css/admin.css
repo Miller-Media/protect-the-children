@@ -30,3 +30,8 @@ div#protect-children-div {
 .password-protect-admin-notice:before{
     content: "\f348";
 }
+
+#post-visibility-select #protect-children-div {
+    border-top: none;
+    border-bottom: none;
+}
