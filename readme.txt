@@ -1,5 +1,5 @@
 === Protect the Children! ===
-Contributors: millermedianow
+Contributors: millermedianow, millermediadev
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
 Tested up to: 5.2.3
 Stable tag: 1.3
