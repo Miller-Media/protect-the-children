@@ -1,8 +1,8 @@
 === Protect the Children! ===
-Contributors: millermedianow
+Contributors: millermedianow, millermediadev
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
-Tested up to: 4.9.8
-Stable tag: 1.2.3
+Tested up to: 5.2.3
+Stable tag: 1.3
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -30,6 +30,9 @@ PROTECT THE CHILDREN!
 3. Admin screen for child post when being protected by parent
 
 == Changelog ==
+
+= 1.3 =
+* Add support for WordPress 5.0 i.e. Gutenberg Editor
 
 = 1.2.3 =
 * Bug fix for password protection input on child and grandchild posts
