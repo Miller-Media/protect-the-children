@@ -84,7 +84,7 @@ class ProtectTheChildren {
     public function register_post_meta_gutenberg()
     {
 
-        register_post_meta( 'page', 'protect_children', array(
+        register_post_meta( '', 'protect_children', array(
             'show_in_rest' => true,
             'single' => true,
             'type' => 'boolean',
@@ -177,7 +177,7 @@ class ProtectTheChildren {
     public function enqueue_block_editor_assets()
     {
         wp_enqueue_script(
-            'myguten-script',
+            'ptc-myguten-script',
             PTC_PLUGIN_URL . 'build/index.js',
             array( 'wp-blocks', 'wp-element', 'wp-components' )
         );
