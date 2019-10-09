@@ -49,10 +49,9 @@ class ProtectTheChildren {
             return;
         }
 
-        if ( isset( $_POST['protect_children'] ) && $_POST['protect_children'] ) {
-            $protect_children = "1";
-        } else {
-            $protect_children =  "";
+        if ( isset( $_POST['protect_children'] ) ) {
+            $protect_children = ( $_POST['protect_children'] ) ? "1" : "";
+            update_post_meta( $post_id, 'protect_children', $protect_children );
         }
 
         update_post_meta( $post_id, 'protect_children', $protect_children );
