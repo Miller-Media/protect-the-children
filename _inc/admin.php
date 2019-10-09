@@ -54,8 +54,6 @@ class ProtectTheChildren {
             update_post_meta( $post_id, 'protect_children', $protect_children );
         }
 
-        update_post_meta( $post_id, 'protect_children', $protect_children );
-
     }
 
     /**
