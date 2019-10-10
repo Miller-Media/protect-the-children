@@ -34,12 +34,20 @@ class ProtectTheChildren {
     }
 
     /**
-     * Handle new admin option to password protect child posts
+     * Handle admin option to password protect child posts
      *
      * @return void
      */
     public function ptc_save_post_meta( $post_id, $post, $update )
     {
+        // When gutenberg is active, some themes such as Jupiter use 
+        // old style meta data which is saved in such a way it calls 
+        // the save_post hook and runs this method. But on a gutenberg 
+        // editor our option is not included as post data, so we need 
+        // to return or the setting will always be saved as off
+        if ( isset( $_GET['meta-box-loader'] ) ) {
+            return;
+        }
 
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
             return;
@@ -49,10 +57,12 @@ class ProtectTheChildren {
             return;
         }
 
-        if ( isset( $_POST['protect_children'] ) ) {
-            $protect_children = ( $_POST['protect_children'] ) ? "1" : "";
-            update_post_meta( $post_id, 'protect_children', $protect_children );
+        if ( isset( $_POST['protect_children']  ) && $_POST['protect_children'] ) {
+            $protect_children = "1";
+        } else {
+            $protect_children =  "";
         }
+        update_post_meta($post_id, 'protect_children', $protect_children);
 
     }
 
