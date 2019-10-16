@@ -24,6 +24,8 @@ define( 'PTC_PLUGIN_URL', plugin_dir_url(__FILE__) );
 
 require_once( PTC_PLUGIN_PATH . '_inc/helpers.php' );
 require_once( PTC_PLUGIN_PATH . '_inc/admin.php' );
+require_once( PTC_PLUGIN_PATH . '_inc/deprecated.php' );
+
 new ProtectTheChildren();
 
 /**
@@ -40,7 +42,7 @@ add_action( 'template_redirect', function () {
         return;
     }
 
-    $parent_post = protectTheChildrenEnabled( $parent_ids );
+    $parent_post = ProtectTheChildren_Helpers::isEnabled( $parent_ids );
 
     if ( ! $parent_post ) {
         return;
