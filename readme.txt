@@ -1,8 +1,8 @@
 === Protect the Children! ===
-Contributors: millermedianow, millermediadev, mohsinrasool
+Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
-Tested up to: 5.2.3
-Stable tag: 1.3.3
+Tested up to: 5.3
+Stable tag: 1.3.4
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,11 +25,18 @@ PROTECT THE CHILDREN!
 
 == Screenshots ==
 
-1. Before changing to 'Password Protected'
-2. After changing to 'Password Protected' (note the checkbox directly above the Publish button)
-3. Admin screen for child post when being protected by parent
+1. WP 5.0+ Before changing to 'Password Protected'
+2. WP 5.0+ Change to 'Password Protected'
+3. WP 5.0+ Additional option now added
+4. WP <5.0 Before changing to 'Password Protected'
+5. WP <5.0 After changing to 'Password Protected' (note the checkbox directly above the Publish button)
+6. WP <5.0 Admin screen for child post when being protected by parent
+7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.3.4 =
+* Code enhancements
 
 = 1.3.3 =
 * Bug fix when save_post hook is called during page save
