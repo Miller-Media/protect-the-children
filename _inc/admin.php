@@ -34,12 +34,20 @@ class ProtectTheChildren {
     }
 
     /**
-     * Handle new admin option to password protect child posts
+     * Handle admin option to password protect child posts
      *
      * @return void
      */
     public function ptc_save_post_meta( $post_id, $post, $update )
     {
+        // When gutenberg is active, some themes such as Jupiter use 
+        // old style meta data which is saved in such a way it calls 
+        // the save_post hook and runs this method. But on a gutenberg 
+        // editor our option is not included as post data, so we need 
+        // to return or the setting will always be saved as off
+        if ( isset( $_GET['meta-box-loader'] ) ) {
+            return;
+        }
 
         if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
             return;
@@ -49,12 +57,12 @@ class ProtectTheChildren {
             return;
         }
 
-        if ( isset( $_POST['protect_children'] ) ) {
-            $protect_children = ( $_POST['protect_children'] ) ? "1" : "";
-            update_post_meta( $post_id, 'protect_children', $protect_children );
+        if ( isset( $_POST['protect_children']  ) && $_POST['protect_children'] ) {
+            $protect_children = "1";
+        } else {
+            $protect_children =  "";
         }
-
-        update_post_meta( $post_id, 'protect_children', $protect_children );
+        update_post_meta($post_id, 'protect_children', $protect_children);
 
     }
 
@@ -68,7 +76,7 @@ class ProtectTheChildren {
 
         $post_type = $post->post_type;
 
-        if ( isPasswordProtected( $post ) ) {
+        if ( ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
             $checked = get_post_meta( $post->ID, 'protect_children', true ) ? "checked" : "";
             echo "<div id=\"protect-children-div\"><input type=\"checkbox\" " . $checked . " name=\"protect_children\" /><strong>Password Protect</strong> all child posts</div>";
         }
@@ -125,7 +133,7 @@ class ProtectTheChildren {
                     foreach( $matches[1] as $child_post ) {
                         $parent_post_ids = get_post_ancestors( $child_post );
 
-                        if ( $post_id = protectTheChildrenEnabled( $parent_post_ids ) ) {
+                        if ( $post_id = ProtectTheChildren_Helpers::isEnabled( $parent_post_ids ) ) {
                             $preg_pattern = sprintf( '/(<\/strong>\n*<div.*?inline_%d">)/i', $child_post );
                             $buffer = preg_replace( $preg_pattern, ' — <span class="post-state">Password protected by parent</span>$1', $buffer );
                         }
@@ -146,7 +154,7 @@ class ProtectTheChildren {
                 // Check if it is a child post and if any parent/grandparent post has a password set
                 $parent_ids = get_post_ancestors( $post );
 
-                if ( $protected_parent = protectTheChildrenEnabled( $parent_ids ) ) {
+                if ( $protected_parent = ProtectTheChildren_Helpers::isEnabled( $parent_ids ) ) {
 
                     // Change the wording to 'Password Protected' if the post is protected
                     $buffer = preg_replace( '/(<span id="post-visibility-display">)(\n*.*)(<\/span>)/i', '$1Password protected$3', $buffer );
