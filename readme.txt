@@ -1,8 +1,8 @@
 === Protect the Children! ===
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
-Tested up to: 5.3
-Stable tag: 1.3.4
+Tested up to: 5.3.2
+Stable tag: 1.3.5
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -34,6 +34,9 @@ PROTECT THE CHILDREN!
 7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.3.5 =
+* Fixed valid header warning when activating
 
 = 1.3.4 =
 * Code enhancements
