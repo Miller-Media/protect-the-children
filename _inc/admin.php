@@ -8,12 +8,14 @@ class ProtectTheChildren {
 
     public function __construct()
     {
+        
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_action( 'save_post', array( $this, 'ptc_save_post_meta' ), 10, 3 );
         add_action( 'post_submitbox_misc_actions', array( $this, 'add_classic_checkbox' ) );
         add_action( 'init', array( $this, 'register_post_meta_gutenberg' ) );
         add_action( 'admin_init', array( $this, 'adjust_visibility' ) );
         add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
+
     }
 
     /**
@@ -33,18 +35,25 @@ class ProtectTheChildren {
 
     }
 
+
     /**
      * Handle admin option to password protect child posts
      *
      * @return void
      */
-    public function ptc_save_post_meta( $post_id, $post, $update )
+    public function ptc_save_post_meta( $post_id , $post, $update)
     {
         // When gutenberg is active, some themes such as Jupiter use 
         // old style meta data which is saved in such a way it calls 
         // the save_post hook and runs this method. But on a gutenberg 
         // editor our option is not included as post data, so we need 
         // to return or the setting will always be saved as off
+
+        if ( empty( $_POST) ) {
+            add_action( 'rest_after_insert_page', array( $this, 'update_pages_meta' ), 10, 1 );
+            return;
+        }
+
         if ( isset( $_GET['meta-box-loader'] ) ) {
             return;
         }
@@ -62,6 +71,7 @@ class ProtectTheChildren {
         } else {
             $protect_children =  "";
         }
+
         update_post_meta($post_id, 'protect_children', $protect_children);
 
     }
@@ -90,7 +100,6 @@ class ProtectTheChildren {
      */
     public function register_post_meta_gutenberg()
     {
-
         register_post_meta( '', 'protect_children', array(
             'show_in_rest' => true,
             'single' => true,
@@ -188,6 +197,18 @@ class ProtectTheChildren {
             PTC_PLUGIN_URL . 'build/index.js',
             array( 'wp-blocks', 'wp-element', 'wp-components' )
         );
+    }
+
+    /**
+     * Handle admin option to password protect child posts (Gutenberg Editor)
+     *
+     * @return void
+     */
+
+    public function update_pages_meta($post){
+
+        $protect_children = get_post_meta($post->ID, 'protect_children', true);
+        update_post_meta($post->ID, 'protect_children', $protect_children);
     }
 
 }
