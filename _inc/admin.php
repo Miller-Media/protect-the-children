@@ -15,7 +15,23 @@ class ProtectTheChildren {
         add_action( 'init', array( $this, 'register_post_meta_gutenberg' ) );
         add_action( 'admin_init', array( $this, 'adjust_visibility' ) );
         add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
+        add_filter( 'is_protected_meta', array( $this, 'protect_meta' ), 10, 2 );
 
+    }
+
+    /**
+     * Protect the 'protect_children' meta key from begin edited in custom fields
+     *
+     * @param   bool        $protected              Whether meta key is protected or not
+     * @param   string      $meta_key               The meta key being checked
+     * @return  bool
+     */
+    public function protect_meta( $protected, $meta_key ) {
+        if ( $meta_key === 'protect_children') {
+            return true;
+        }
+
+        return $protected;
     }
 
     /**
