@@ -1,7 +1,7 @@
 === Protect the Children! ===
-Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory
+Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
-Tested up to: 5.8
+Tested up to: 5.9.3
 Stable tag: 1.3.8
 Requires PHP: 5.6
 License: GPLv2 or later
@@ -10,6 +10,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Easily password protect the child pages/posts of a post/page that is password protected.
 
 == Description ==
+
+**Did you find this plugin helpful?** Please consider [leaving a 5-star review](https://wordpress.org/support/view/plugin-reviews/protect-the-children/).
+
+Please help by contributing to the GitHub repository [Protect the Children on GitHub](https://github.com/Miller-Media/protect-the-children)
 
 Do you have a password protected post or page that has child (and grandchild) pages? Currently, you have to password protect each of these pages individually but, with this simple and efficient plugin, you can automatically password protect a page and all of it's children automatically with the click of a button.
 

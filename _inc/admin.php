@@ -16,7 +16,24 @@ class ProtectTheChildren {
         add_action( 'admin_init', array( $this, 'adjust_visibility' ) );
         add_action( 'enqueue_block_editor_assets', array( $this, 'enqueue_block_editor_assets' ) );
         add_filter( 'is_protected_meta', array( $this, 'protect_meta' ), 10, 2 );
+        add_filter( 'register_meta_args', array( $this, 'allow_meta_editing_for_admin' ), 10, 4);
+    }
 
+    /**
+     * Allows users with the 'edit_posts' capability to edit the protected protect_children meta key
+     * This is required only when Gutenberg is active.
+     *
+     * @param $args
+     * @param $defaults
+     * @param $object_type
+     * @param $meta_key
+     * @return array
+     */
+    public function allow_meta_editing_for_admin($args, $defaults, $object_type, $meta_key) {
+        if ($meta_key === 'protect_children' && is_array($args)) {
+            $args['auth_callback'] = function(){ return current_user_can('edit_posts'); };
+        }
+        return $args;
     }
 
     /**
