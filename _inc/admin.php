@@ -8,7 +8,6 @@ class ProtectTheChildren {
 
     public function __construct()
     {
-        
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_action( 'save_post', array( $this, 'ptc_save_post_meta' ), 10, 3 );
         add_action( 'post_submitbox_misc_actions', array( $this, 'add_classic_checkbox' ) );
@@ -58,7 +57,6 @@ class ProtectTheChildren {
      */
     public function enqueue_scripts()
     {
-
         wp_enqueue_style( 'ptc-admin–css', PTC_PLUGIN_URL . 'assets/css/admin.css' );
 
         // load classic editor js if gutenberg is disabled
@@ -76,12 +74,15 @@ class ProtectTheChildren {
      */
     public function ptc_save_post_meta( $post_id , $post, $update)
     {
+        if( ! ProtectTheChildren_Helpers::supportsPTC( $post ) ) {
+            return;
+        }
+
         // When gutenberg is active, some themes such as Jupiter use 
         // old style meta data which is saved in such a way it calls 
         // the save_post hook and runs this method. But on a gutenberg 
         // editor our option is not included as post data, so we need 
         // to return or the setting will always be saved as off
-
         if ( empty( $_POST) ) {
             add_action( 'rest_after_insert_page', array( $this, 'update_pages_meta' ), 10, 1 );
             return;
@@ -116,8 +117,9 @@ class ProtectTheChildren {
      */
     public function add_classic_checkbox( $post )
     {
-
-        $post_type = $post->post_type;
+        if( ! ProtectTheChildren_Helpers::supportsPTC( $post ) ) {
+            return;
+        }
 
         if ( ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
             $checked = get_post_meta( $post->ID, 'protect_children', true ) ? "checked" : "";
@@ -133,12 +135,11 @@ class ProtectTheChildren {
      */
     public function register_post_meta_gutenberg()
     {
-        register_post_meta( '', 'protect_children', array(
+        register_post_meta('', 'protect_children', array(
             'show_in_rest' => true,
             'single' => true,
             'type' => 'boolean',
-        ) );
-
+        ));
     }
 
     /**
@@ -189,8 +190,11 @@ class ProtectTheChildren {
 
         // On single post edit page
         if ( 'post.php' === $pagenow && isset( $_GET['post'] ) ) {
-            ob_start( function ( $buffer ) {
+            if( ! ProtectTheChildren_Helpers::supportsPTC( get_post( $_GET['post'] ) ) ){
+                return $buffer;
+            }
 
+            ob_start( function ( $buffer ) {
                 $post = get_post($_GET['post']);
 
                 // Check if it is a child post and if any parent/grandparent post has a password set
@@ -225,6 +229,11 @@ class ProtectTheChildren {
      */
     public function enqueue_block_editor_assets()
     {
+        global $post;
+        if( ! ProtectTheChildren_Helpers::supportsPTC( $post ) ) {
+            return;
+        }
+
         wp_enqueue_script(
             'ptc-myguten-script',
             PTC_PLUGIN_URL . 'build/index.js',
@@ -239,6 +248,9 @@ class ProtectTheChildren {
      */
 
     public function update_pages_meta($post){
+        if( ! ProtectTheChildren_Helpers::supportsPTC( $post ) ) {
+            return;
+        }
 
         $protect_children = get_post_meta($post->ID, 'protect_children', true);
         update_post_meta($post->ID, 'protect_children', $protect_children);

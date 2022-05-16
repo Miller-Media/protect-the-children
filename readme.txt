@@ -1,8 +1,8 @@
 === Protect the Children! ===
-Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop
+Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
 Tested up to: 5.9.3
-Stable tag: 1.3.8
+Stable tag: 1.3.9
 Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,11 @@ PROTECT THE CHILDREN!
 7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.3.9 =
+* Added full support for custom post types
+* Fixed Gutenberg issues with protected meta fields
+* Added public GitHub link to plugin description
 
 = 1.3.5 =
 * Fixed valid header warning when activating

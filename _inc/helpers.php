@@ -10,10 +10,10 @@ class ProtectTheChildren_Helpers {
 
     static function isPasswordProtected($post)
     {
-        if (is_int($post) or !is_object($post))
+        if ( is_int($post) or !is_object($post) )
             $post = get_post($post);
 
-        return 'private' != $post->post_status && !empty($post->post_password);
+        return 'private' != $post->post_status && !empty( $post->post_password );
 
     }
 
@@ -26,17 +26,19 @@ class ProtectTheChildren_Helpers {
 
     static function isEnabled($post)
     {
-        if(is_array($post)) {
+        if( is_array($post) ) {
             if(empty($post))
                 return false;
 
-            foreach ($post as $single_post){
-                if($post_protected = self::processPosts($single_post))
+            foreach ( $post as $single_post ){
+                if( $post_protected = self::processPosts($single_post) )
                     return $post_protected->ID;
             }
+
+            return false;
         }
 
-        if($post_protected = self::processPosts($post))
+        if( $post_protected = self::processPosts($post) )
             return $post_protected->ID;
     }
 
@@ -48,14 +50,30 @@ class ProtectTheChildren_Helpers {
      */
     static function processPosts($post)
     {
-        if (is_int($post) or !is_object($post))
+        if ( is_int($post) or !is_object($post) )
             $post = get_post($post);
 
-        if (!self::isPasswordProtected($post))
+        if ( !self::isPasswordProtected($post) )
             return false;
 
         if ( get_post_meta($post->ID, 'protect_children', true)  )
             return $post;
+
+        return false;
+    }
+
+    /**
+     * Check if post can support Protect the Children
+     *
+     * @param $post
+     * @return bool|WP_Post
+     */
+    static function supportsPTC($post){
+        $post_type = $post->post_type;
+
+        if( is_post_type_hierarchical( $post_type ) && post_type_supports( $post_type, 'custom-fields') ){
+            return true;
+        }
 
         return false;
     }

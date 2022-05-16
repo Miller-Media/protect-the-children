@@ -2,14 +2,14 @@
 /**
  * Plugin Name: Protect the Children!
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version: 1.3.8
+ * Version: 1.3.9
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
  */
 
 
 if ( ! defined( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION' ) ) {
-    define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.3.4' );
+    define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.3.9' );
 }
 
 if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
@@ -50,6 +50,15 @@ add_action( 'template_redirect', function () {
 
     $parent_post_object = is_int( $parent_post ) ? get_post( $parent_post ) : $parent_post;
     $parent_password = $parent_post_object->post_password;
+
+    // If password cookie does not exist, return password check
+    if( !array_key_exists('wp-postpass_' . COOKIEHASH, $_COOKIE) ) {
+        add_filter( 'post_password_required', function () {
+            return true;
+        } );
+
+        return;
+    }
 
     // Check the cookie (hashed password)
     require_once ABSPATH . WPINC . '/class-phpass.php';
