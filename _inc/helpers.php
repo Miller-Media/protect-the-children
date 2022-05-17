@@ -34,8 +34,6 @@ class ProtectTheChildren_Helpers {
                 if( $post_protected = self::processPosts($single_post) )
                     return $post_protected->ID;
             }
-
-            return false;
         }
 
         if( $post_protected = self::processPosts($post) )
@@ -50,16 +48,31 @@ class ProtectTheChildren_Helpers {
      */
     static function processPosts($post)
     {
-        if ( is_int($post) or !is_object($post) )
-            $post = get_post($post);
+        if ( is_array($post) ){
+            foreach($post as $post_id){
+                if( $process_post = self::processPost($post_id) ){
+                    return $process_post;
+                }
+            }
+        } else {
+            return self::processPost($post);
+        }
+
+        return false;
+    }
+
+    static function processPost($post_id){
+        if ( is_int($post_id) or !is_object($post_id) )
+            $post = get_post($post_id);
+
+        if( !$post )
+            return false;
 
         if ( !self::isPasswordProtected($post) )
             return false;
 
         if ( get_post_meta($post->ID, 'protect_children', true)  )
             return $post;
-
-        return false;
     }
 
     /**
