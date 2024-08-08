@@ -41,6 +41,7 @@ PROTECT THE CHILDREN!
 
 = 1.5.0 =
 * Fixed issue with widgets page
+* Use PSR-4 autoloading
 
 = 1.4.0 =
 * Fixed issue with nested child pages

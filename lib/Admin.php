@@ -1,8 +1,8 @@
 <?php
 
-namespace App;
+namespace ProtectTheChildren;
 
-class ProtectTheChildren
+class Admin
 {
     /**
      * @todo On edit.php page, need to filter only children posts of password protected parents (not all child posts)
@@ -226,6 +226,7 @@ class ProtectTheChildren
     public function enqueue_block_editor_assets()
     {
         global $post;
+
         if (! Helpers::supportsPTC($post)) {
             return;
         }

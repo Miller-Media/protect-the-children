@@ -7,8 +7,8 @@
  * Author URI: www.millermedia.io
  */
 
-use App\Helpers;
-use App\ProtectTheChildren;
+use ProtectTheChildren\Admin;
+use ProtectTheChildren\Helpers;
 
 require 'vendor/autoload.php';
 
@@ -29,7 +29,7 @@ define('PTC_PLUGIN_URL', plugin_dir_url(__FILE__));
 
 require_once PTC_PLUGIN_PATH.'/deprecated.php';
 
-new ProtectTheChildren();
+new Admin();
 
 /**
  * On front-end page load, check the post's parent ID
@@ -64,6 +64,7 @@ add_action('template_redirect', function () {
 
     // Check the cookie (hashed password)
     require_once ABSPATH.WPINC.'/class-phpass.php';
+
     $hasher = new PasswordHash(8, true);
     $hash = wp_unslash($_COOKIE['wp-postpass_'.COOKIEHASH]);
     $required = ! $hasher->CheckPassword($parent_password, $hash);
