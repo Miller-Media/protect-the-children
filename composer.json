@@ -1,0 +1,11 @@
+{
+  "name": "marcbelletre/protect-the-children",
+  "description": "Easily password protect the child pages/posts of a post/page that is password protected.",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Matt Miller"
+    }
+  ],
+  "require": {}
+}
