@@ -6,8 +6,14 @@
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
  */
+
+use App\Helpers;
+use App\ProtectTheChildren;
+
+require 'vendor/autoload.php';
+
 if (! defined('PROTECT_THE_CHILDREN_PLUGIN_VERSION')) {
-    define('PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.4.0');
+    define('PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.5.0');
 }
 
 if (version_compare(PHP_VERSION, '5.6', '<')) {
@@ -21,9 +27,7 @@ if (version_compare(PHP_VERSION, '5.6', '<')) {
 define('PTC_PLUGIN_PATH', plugin_dir_path(__FILE__));
 define('PTC_PLUGIN_URL', plugin_dir_url(__FILE__));
 
-require_once PTC_PLUGIN_PATH.'_inc/helpers.php';
-require_once PTC_PLUGIN_PATH.'_inc/admin.php';
-require_once PTC_PLUGIN_PATH.'_inc/deprecated.php';
+require_once PTC_PLUGIN_PATH.'/deprecated.php';
 
 new ProtectTheChildren();
 
@@ -40,7 +44,7 @@ add_action('template_redirect', function () {
         return;
     }
 
-    $parent_post = ProtectTheChildren_Helpers::isEnabled($parent_ids);
+    $parent_post = Helpers::isEnabled($parent_ids);
 
     if (! $parent_post) {
         return;

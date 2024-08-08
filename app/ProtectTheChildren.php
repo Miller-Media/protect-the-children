@@ -1,6 +1,8 @@
 <?php
 
-class admin
+namespace App;
+
+class ProtectTheChildren
 {
     /**
      * @todo On edit.php page, need to filter only children posts of password protected parents (not all child posts)
@@ -76,7 +78,7 @@ class admin
      */
     public function ptc_save_post_meta($post_id, $post, $update)
     {
-        if (! ProtectTheChildren_Helpers::supportsPTC($post)) {
+        if (! Helpers::supportsPTC($post)) {
             return;
         }
 
@@ -119,11 +121,11 @@ class admin
      */
     public function add_classic_checkbox($post)
     {
-        if (! ProtectTheChildren_Helpers::supportsPTC($post)) {
+        if (! Helpers::supportsPTC($post)) {
             return;
         }
 
-        if (ProtectTheChildren_Helpers::isPasswordProtected($post)) {
+        if (Helpers::isPasswordProtected($post)) {
             $checked = get_post_meta($post->ID, 'protect_children', true) ? 'checked' : '';
             echo '<div id="protect-children-div"><input type="checkbox" '.$checked.' name="protect_children" /><strong>Password Protect</strong> all child posts</div>';
         }
@@ -174,7 +176,7 @@ class admin
                     foreach ($matches[1] as $child_post) {
                         $parent_post_ids = get_post_ancestors($child_post);
 
-                        if ($post_id = ProtectTheChildren_Helpers::isEnabled($parent_post_ids)) {
+                        if ($post_id = Helpers::isEnabled($parent_post_ids)) {
                             $preg_pattern = sprintf('/(<\/strong>\n*<div.*?inline_%d">)/i', $child_post);
                             $buffer = preg_replace($preg_pattern, ' — <span class="post-state">Password protected by parent</span>$1', $buffer);
                         }
@@ -187,7 +189,7 @@ class admin
 
         // On single post edit page
         if ('post.php' === $pagenow && isset($_GET['post'])) {
-            if (! ProtectTheChildren_Helpers::supportsPTC(get_post($_GET['post']))) {
+            if (! Helpers::supportsPTC(get_post($_GET['post']))) {
                 return $buffer;
             }
 
@@ -197,7 +199,7 @@ class admin
                 // Check if it is a child post and if any parent/grandparent post has a password set
                 $parent_ids = get_post_ancestors($post);
 
-                if ($protected_parent = ProtectTheChildren_Helpers::isEnabled($parent_ids)) {
+                if ($protected_parent = Helpers::isEnabled($parent_ids)) {
                     // Change the wording to 'Password Protected' if the post is protected
                     $buffer = preg_replace('/(<span id="post-visibility-display">)(\n*.*)(<\/span>)/i', '$1Password protected$3', $buffer);
 
@@ -224,7 +226,7 @@ class admin
     public function enqueue_block_editor_assets()
     {
         global $post;
-        if (! ProtectTheChildren_Helpers::supportsPTC($post)) {
+        if (! Helpers::supportsPTC($post)) {
             return;
         }
 
@@ -242,7 +244,7 @@ class admin
      */
     public function update_pages_meta($post)
     {
-        if (! ProtectTheChildren_Helpers::supportsPTC($post)) {
+        if (! Helpers::supportsPTC($post)) {
             return;
         }
 
