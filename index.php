@@ -5,6 +5,8 @@
  * Version: 1.4.0
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
+ * Requires PHP: 8.1
+ * Tested up to: 6.9
  */
 
 
@@ -12,9 +14,9 @@ if ( ! defined( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION' ) ) {
     define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.4.0' );
 }
 
-if ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
+if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
     add_action( 'admin_notices', function () {
-        echo "<div class=\"error\"><p>" . __('Protect the Children requires PHP 5.6 and greater to function properly. Please upgrade PHP or deactivate Protect the Children.', 'protect-the-children') . "</p></div>";
+        echo "<div class=\"error\"><p>" . __('Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children.', 'protect-the-children') . "</p></div>";
     } );
     return;
 }
