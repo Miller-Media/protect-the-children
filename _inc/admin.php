@@ -100,13 +100,29 @@ class ProtectTheChildren {
             return;
         }
 
-        if ( isset( $_POST['protect_children']  ) && $_POST['protect_children'] ) {
-            $protect_children = "1";
-        } else {
-            $protect_children =  "";
+        // Detect if this is a Quick Edit or Bulk Edit (where checkbox isn't shown)
+        $is_quick_edit = isset( $_POST['_inline_edit'] ) || isset( $_POST['action'] ) && $_POST['action'] === 'inline-save';
+        $is_bulk_edit = isset( $_POST['bulk_edit'] );
+
+        // If this is Quick Edit or Bulk Edit, don't modify the protect_children meta
+        if ( $is_quick_edit || $is_bulk_edit ) {
+            return;
         }
 
-        update_post_meta($post_id, 'protect_children', $protect_children);
+        // Only update protect_children meta if the post is password protected
+        if ( ! ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
+            // If post is not password protected, clear the meta (protection shouldn't apply)
+            delete_post_meta( $post_id, 'protect_children' );
+            return;
+        }
+
+        // Post IS password protected - update based on checkbox state
+        if ( isset( $_POST['protect_children'] ) && $_POST['protect_children'] ) {
+            update_post_meta( $post_id, 'protect_children', '1' );
+        } else {
+            // Checkbox not checked or not present - clear the meta
+            delete_post_meta( $post_id, 'protect_children' );
+        }
 
     }
 
@@ -253,8 +269,22 @@ class ProtectTheChildren {
             return;
         }
 
+        // Only process if post is password protected
+        if ( ! ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
+            // If post is not password protected, clear the meta
+            delete_post_meta( $post->ID, 'protect_children' );
+            return;
+        }
+
+        // Get the current value from the meta (Gutenberg updates it directly via REST API)
         $protect_children = get_post_meta($post->ID, 'protect_children', true);
-        update_post_meta($post->ID, 'protect_children', $protect_children);
+
+        // Ensure it's saved properly (Gutenberg already updated it, this just ensures consistency)
+        if ( $protect_children ) {
+            update_post_meta($post->ID, 'protect_children', '1');
+        } else {
+            delete_post_meta($post->ID, 'protect_children');
+        }
     }
 
 }
