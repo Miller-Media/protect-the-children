@@ -8,6 +8,7 @@
  * Requires PHP: 8.1
  * Tested up to: 6.9
  * Text Domain: protect-the-children
+ * Domain Path: /languages
  */
 
 
