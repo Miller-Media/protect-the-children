@@ -123,7 +123,7 @@ class ProtectTheChildren {
 
         if ( ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
             $checked = get_post_meta( $post->ID, 'protect_children', true ) ? "checked" : "";
-            echo "<div id=\"protect-children-div\"><input type=\"checkbox\" " . $checked . " name=\"protect_children\" /><strong>Password Protect</strong> all child posts</div>";
+            echo "<div id=\"protect-children-div\"><input type=\"checkbox\" " . $checked . " name=\"protect_children\" /><strong>" . esc_html__('Password Protect', 'protect-the-children') . "</strong> " . esc_html__('all child posts', 'protect-the-children') . "</div>";
         }
 
     }
@@ -178,7 +178,7 @@ class ProtectTheChildren {
 
                         if ( $post_id = ProtectTheChildren_Helpers::isEnabled( $parent_post_ids ) ) {
                             $preg_pattern = sprintf( '/(<\/strong>\n*<div.*?inline_%d">)/i', $child_post );
-                            $buffer = preg_replace( $preg_pattern, ' — <span class="post-state">Password protected by parent</span>$1', $buffer );
+                            $buffer = preg_replace( $preg_pattern, ' — <span class="post-state">' . esc_html__('Password protected by parent', 'protect-the-children') . '</span>$1', $buffer );
                         }
                     }
 
@@ -203,7 +203,7 @@ class ProtectTheChildren {
                 if ( $protected_parent = ProtectTheChildren_Helpers::isEnabled( $parent_ids ) ) {
 
                     // Change the wording to 'Password Protected' if the post is protected
-                    $buffer = preg_replace( '/(<span id="post-visibility-display">)(\n*.*)(<\/span>)/i', '$1Password protected$3', $buffer );
+                    $buffer = preg_replace( '/(<span id="post-visibility-display">)(\n*.*)(<\/span>)/i', '$1' . esc_html__('Password protected', 'protect-the-children') . '$3', $buffer );
 
                     // Remove Edit button post visibility (post needs to be updated from parent post)
                     $buffer = preg_replace( '/<a href="#visibility".*?><\/a>/i', '', $buffer );
@@ -211,7 +211,7 @@ class ProtectTheChildren {
                     // Add 'Password protect by parent post' notice under visibility section
                     $regex_pattern = '/(<\/div>)(<\!-- \.misc-pub-section -->)(\n*.*)(<div class="misc-pub-section curtime misc-pub-curtime">)/i';
                     $admin_edit_link = sprintf( admin_url( 'post.php?post=%d&action=edit' ), $protected_parent );
-                    $update_pattern = sprintf( '<br><span class="wp-media-buttons-icon password-protect-admin-notice">Password protected by <a href="%s">parent post</a></span>$1$2$3$4$5', $admin_edit_link );
+                    $update_pattern = sprintf( '<br><span class="wp-media-buttons-icon password-protect-admin-notice">' . __('Password protected by %s', 'protect-the-children') . '</span>$1$2$3$4$5', '<a href="' . esc_url($admin_edit_link) . '">' . esc_html__('parent post', 'protect-the-children') . '</a>' );
                     $buffer = preg_replace( $regex_pattern, $update_pattern, $buffer );
                     
                 }
@@ -237,8 +237,9 @@ class ProtectTheChildren {
         wp_enqueue_script(
             'ptc-myguten-script',
             PTC_PLUGIN_URL . 'build/index.js',
-            array( 'wp-blocks', 'wp-element', 'wp-components' )
+            array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n' )
         );
+        wp_set_script_translations( 'ptc-myguten-script', 'protect-the-children' );
     }
 
     /**

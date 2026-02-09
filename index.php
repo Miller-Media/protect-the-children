@@ -7,6 +7,7 @@
  * Author URI: www.millermedia.io
  * Requires PHP: 8.1
  * Tested up to: 6.9
+ * Text Domain: protect-the-children
  */
 
 
@@ -23,6 +24,10 @@ if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
 
 define( 'PTC_PLUGIN_PATH', plugin_dir_path(__FILE__) );
 define( 'PTC_PLUGIN_URL', plugin_dir_url(__FILE__) );
+
+add_action('plugins_loaded', function() {
+    load_plugin_textdomain('protect-the-children', false, dirname(plugin_basename(__FILE__)) . '/languages');
+}, 5);
 
 require_once( PTC_PLUGIN_PATH . '_inc/helpers.php' );
 require_once( PTC_PLUGIN_PATH . '_inc/admin.php' );

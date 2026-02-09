@@ -3,6 +3,7 @@
  */
 jQuery(document).ready(function () {
 
+	const { __ } = wp.i18n
 	const { FormToggle } = wp.components
 	const { PluginPostStatusInfo } = wp.editPost
 	const { compose, withInstanceId } = wp.compose
@@ -17,7 +18,7 @@ jQuery(document).ready(function () {
 		  const id = instanceId + '-editors-pick'
 		  return (
 		    <PluginPostStatusInfo>
-		      <label htmlFor={id}><strong>Password Protect</strong> all children</label>
+		      <label htmlFor={id}><strong>{__('Password Protect', 'protect-the-children')}</strong> {__('all children', 'protect-the-children')}</label>
 		      <FormToggle
 		        key='toggle'
 		        checked={ isChecked }
