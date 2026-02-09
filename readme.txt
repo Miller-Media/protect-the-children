@@ -2,7 +2,7 @@
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
 Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
 Tested up to: 6.9
-Stable tag: 1.4.2
+Stable tag: 1.4.3
 Requires PHP: 8.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -38,6 +38,10 @@ PROTECT THE CHILDREN!
 7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.4.3 =
+* Fixed critical bug where updating parent page via Quick Edit removed password protection from children
+* Added dismissible review prompt notice after 14 days of usage
 
 = 1.4.2 =
 * Added translations for Spanish, French, German, Portuguese (Brazilian), and Italian
