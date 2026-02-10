@@ -1,0 +1,44 @@
+# Dutch translation for Protect the Children
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"POT-Creation-Date: 2026-02-10 12:30+0000\n"
+"PO-Revision-Date: 2026-02-10 12:30+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Dutch\n"
+"Language: nl_NL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children vereist PHP 8.1 of hoger om goed te functioneren. Upgrade PHP of deactiveer Protect the Children."
+
+msgid "Password Protect"
+msgstr "Wachtwoord beveiligen"
+
+msgid "all child posts"
+msgstr "alle onderliggende berichten"
+
+msgid "Password protected by parent"
+msgstr "Wachtwoord beveiligd door hoofdbericht"
+
+msgid "Password protected"
+msgstr "Wachtwoord beveiligd"
+
+msgid "Password protected by %s"
+msgstr "Wachtwoord beveiligd door %s"
+
+msgid "parent post"
+msgstr "hoofdbericht"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Hé! Je gebruikt %1$s nu al een tijdje. Als je er blij mee bent, zou je dan %2$seen 5-sterren review willen achterlaten%3$s? Het helpt ons om te blijven verbeteren! 🙏"
+
+msgid "Leave a Review"
+msgstr "Laat een review achter"
+
+msgid "Maybe Later"
+msgstr "Misschien later"
