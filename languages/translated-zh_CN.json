@@ -1,0 +1,12 @@
+{
+  "all child posts": "所有子文章",
+  "Leave a Review": "留下评论",
+  "Maybe Later": "稍后再说",
+  "parent post": "父文章",
+  "Password Protect": "密码保护",
+  "Password protected": "已密码保护",
+  "Password protected by parent": "由父文章密码保护",
+  "Password protected by %s": "由 %s 密码保护",
+  "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children.": "Protect the Children 需要 PHP 8.1 或更高版本才能正常运行。请升级 PHP 或停用 Protect the Children。",
+  "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏": "如果您喜欢它，您是否愿意%2$s留下 5 星评论%3$s？这有助于我们不断改进！🙏"
+}
