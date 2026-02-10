@@ -1,0 +1,47 @@
+# Japanese translation for protect-the-children.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: protect-the-children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Japanese\n"
+"Language: ja\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T00:47:10+00:00\n"
+"PO-Revision-Date: 2026-02-10 00:47+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "all child posts"
+msgstr "すべての子投稿"
+
+msgid "Leave a Review"
+msgstr "レビューを残す"
+
+msgid "Maybe Later"
+msgstr "後で"
+
+msgid "parent post"
+msgstr "親投稿"
+
+msgid "Password Protect"
+msgstr "パスワード保護"
+
+msgid "Password protected"
+msgstr "パスワード保護"
+
+msgid "Password protected by parent"
+msgstr "親によってパスワード保護"
+
+msgid "Password protected by %s"
+msgstr "%sによってパスワード保護"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the ChildrenはPHP 8.1以上が必要です。PHPをアップグレードするか、Protect the Childrenを無効にしてください。"
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "楽しんでいただけましたら、%2$s5つ星のレビューを残して%3$sいただけますか？改善を続ける励みになります！🙏"
+
