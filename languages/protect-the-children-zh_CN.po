@@ -1,0 +1,47 @@
+# Chinese (Simplified) translation for protect-the-children.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: protect-the-children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Chinese (Simplified)\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T06:08:40+00:00\n"
+"PO-Revision-Date: 2026-02-10 06:08+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "all child posts"
+msgstr "所有子文章"
+
+msgid "Leave a Review"
+msgstr "留下评论"
+
+msgid "Maybe Later"
+msgstr "稍后再说"
+
+msgid "parent post"
+msgstr "父文章"
+
+msgid "Password Protect"
+msgstr "密码保护"
+
+msgid "Password protected"
+msgstr "已密码保护"
+
+msgid "Password protected by parent"
+msgstr "由父文章密码保护"
+
+msgid "Password protected by %s"
+msgstr "由 %s 密码保护"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children 需要 PHP 8.1 或更高版本才能正常运行。请升级 PHP 或停用 Protect the Children。"
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "如果您喜欢它，您是否愿意%2$s留下 5 星评论%3$s？这有助于我们不断改进！🙏"
+
