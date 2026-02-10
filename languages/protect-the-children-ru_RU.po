@@ -1,0 +1,47 @@
+# Russian translation for protect-the-children.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: protect-the-children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Russian\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T17:39:28+00:00\n"
+"PO-Revision-Date: 2026-02-10 17:39+0000\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "all child posts"
+msgstr "все дочерние записи"
+
+msgid "Leave a Review"
+msgstr "Оставить отзыв"
+
+msgid "Maybe Later"
+msgstr "Может быть, позже"
+
+msgid "parent post"
+msgstr "родительская запись"
+
+msgid "Password Protect"
+msgstr "Защита паролем"
+
+msgid "Password protected"
+msgstr "Защищено паролем"
+
+msgid "Password protected by parent"
+msgstr "Защищено паролем родительской записью"
+
+msgid "Password protected by %s"
+msgstr "Защищено паролем %s"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Для правильной работы Protect the Children требуется PHP 8.1 или выше. Пожалуйста, обновите PHP или отключите Protect the Children."
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "нравится, не могли бы вы %2$sоставить 5-звездочный отзыв%3$s? Это помогает нам совершенствоваться! 🙏"
+
