@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Protect the Children!
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version: 1.4.5
+ * Version: 1.4.6
  * Author: Miller Media (Matt Miller)
  * Author URI: www.millermedia.io
  * Requires PHP: 8.1
