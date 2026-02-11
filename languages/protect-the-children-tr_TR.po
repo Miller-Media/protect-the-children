@@ -1,0 +1,44 @@
+# Turkish translation for Protect the Children
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"POT-Creation-Date: 2026-02-11 21:29+0000\n"
+"PO-Revision-Date: 2026-02-11 21:29+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Turkish\n"
+"Language: tr_TR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children'ın düzgün çalışması için PHP 8.1 veya üstü gereklidir. Lütfen PHP'yi güncelleyin veya Protect the Children'ı devre dışı bırakın."
+
+msgid "Password Protect"
+msgstr "Parola Koruması"
+
+msgid "all child posts"
+msgstr "tüm alt yazılar"
+
+msgid "Password protected by parent"
+msgstr "Üst yazı tarafından parola korumalı"
+
+msgid "Password protected"
+msgstr "Parola korumalı"
+
+msgid "Password protected by %s"
+msgstr "%s tarafından parola korumalı"
+
+msgid "parent post"
+msgstr "üst yazı"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Merhaba! %1$s eklentisini bir süredir kullanıyorsunuz. Beğendiyseniz, %2$s5 yıldızlı bir değerlendirme bırakır mısınız%3$s? Gelişmemize yardımcı oluyor! 🙏"
+
+msgid "Leave a Review"
+msgstr "Değerlendirme Bırakın"
+
+msgid "Maybe Later"
+msgstr "Belki Daha Sonra"
