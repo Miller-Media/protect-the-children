@@ -1,6 +1,6 @@
 === Protect the Children! ===
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
-Tags: password protect, password, protected, protect, password, child, parent, edit, visibility
+Tags: password protect, child pages, parent pages, visibility, password
 Tested up to: 6.9.1
 Stable tag: 1.4.6
 Requires PHP: 8.1
