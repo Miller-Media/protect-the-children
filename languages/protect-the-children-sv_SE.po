@@ -1,0 +1,46 @@
+# Swedish translation for Protect the Children
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/protect-the-children/issues\n"
+"POT-Creation-Date: 2026-02-12 13:00+0000\n"
+"PO-Revision-Date: 2026-02-12 13:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Swedish\n"
+"Language: sv_SE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "all child posts"
+msgstr "alla underordnade inlägg"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Hej! Du har använt %1$s ett tag nu. Om du gillar det, skulle du kunna %2$slämna en 5-stjärnig recension%3$s? Det hjälper oss att fortsätta förbättra! 🙏"
+
+msgid "Leave a Review"
+msgstr "Lämna en recension"
+
+msgid "Maybe Later"
+msgstr "Kanske senare"
+
+msgid "parent post"
+msgstr "överordnat inlägg"
+
+msgid "Password Protect"
+msgstr "Lösenordsskydda"
+
+msgid "Password protected"
+msgstr "Lösenordsskyddad"
+
+msgid "Password protected by %s"
+msgstr "Lösenordsskyddad av %s"
+
+msgid "Password protected by parent"
+msgstr "Lösenordsskyddad av överordnat inlägg"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children kräver PHP 8.1 eller senare för att fungera korrekt. Vänligen uppgradera PHP eller inaktivera Protect the Children."
