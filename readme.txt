@@ -21,6 +21,23 @@ Once you choose the 'Visibility' option on a post and update it to 'Password Pro
 
 PROTECT THE CHILDREN!
 
+== Localizations ==
+This plugin is available in the following languages:
+
+* English
+* Chinese Simplified (简体中文)
+* Dutch (Nederlands)
+* French (Français)
+* German (Deutsch)
+* Italian (Italiano)
+* Japanese (日本語)
+* Polish (Polski)
+* Portuguese - Brazil (Português do Brasil)
+* Russian (Русский)
+* Spanish (Español)
+* Swedish (Svenska)
+* Turkish (Türkçe)
+
 == Installation ==
 
 1. Upload the plugin files to the `/wp-content/plugins/protect-the-children` directory, or install the plugin through the WordPress plugins screen directly.
