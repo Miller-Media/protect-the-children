@@ -1,0 +1,46 @@
+# Indonesian translation for Protect the Children
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/protect-the-children/issues\n"
+"POT-Creation-Date: 2026-02-13 13:00+0000\n"
+"PO-Revision-Date: 2026-02-13 13:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Indonesian\n"
+"Language: id_ID\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "all child posts"
+msgstr "semua pos turunan"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Hei! Anda sudah menggunakan %1$s cukup lama. Jika Anda menyukainya, maukah Anda %2$smemberikan ulasan bintang 5%3$s? Ini membantu kami terus berkembang! 🙏"
+
+msgid "Leave a Review"
+msgstr "Berikan Ulasan"
+
+msgid "Maybe Later"
+msgstr "Mungkin Nanti"
+
+msgid "parent post"
+msgstr "pos induk"
+
+msgid "Password Protect"
+msgstr "Lindungi dengan Kata Sandi"
+
+msgid "Password protected"
+msgstr "Dilindungi kata sandi"
+
+msgid "Password protected by %s"
+msgstr "Dilindungi kata sandi oleh %s"
+
+msgid "Password protected by parent"
+msgstr "Dilindungi kata sandi oleh pos induk"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children membutuhkan PHP 8.1 atau lebih tinggi untuk berfungsi dengan baik. Silakan perbarui PHP atau nonaktifkan Protect the Children."
