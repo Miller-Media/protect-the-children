@@ -1,0 +1,46 @@
+# Vietnamese translation for Protect the Children
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/protect-the-children/issues\n"
+"POT-Creation-Date: 2026-02-14 13:00+0000\n"
+"PO-Revision-Date: 2026-02-14 13:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Vietnamese\n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Password Protect"
+msgstr "Bảo vệ bằng mật khẩu"
+
+msgid "Password protected"
+msgstr "Đã bảo vệ bằng mật khẩu"
+
+msgid "Password protected by parent"
+msgstr "Được bảo vệ bằng mật khẩu từ bài viết cha"
+
+msgid "Password protected by %s"
+msgstr "Được bảo vệ bằng mật khẩu từ %s"
+
+msgid "all child posts"
+msgstr "tất cả bài viết con"
+
+msgid "parent post"
+msgstr "bài viết cha"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children yêu cầu PHP 8.1 trở lên để hoạt động bình thường. Vui lòng nâng cấp PHP hoặc tắt Protect the Children."
+
+msgid "Hey! You\\'ve been using %1$s for a while now. If you\\'re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Xin chào! Bạn đã sử dụng %1$s được một thời gian rồi. Nếu bạn thấy hài lòng, bạn có thể %2$sđể lại đánh giá 5 sao%3$s được không? Điều đó giúp chúng tôi cải thiện hơn! 🙏"
+
+msgid "Leave a Review"
+msgstr "Để lại đánh giá"
+
+msgid "Maybe Later"
+msgstr "Để sau"
