@@ -1,0 +1,47 @@
+# Latvian translation for protect-the-children.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: protect-the-children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Latvian\n"
+"Language: lv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T06:08:40+00:00\n"
+"PO-Revision-Date: 2026-02-15 07:31+0000\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);\n"
+
+msgid "all child posts"
+msgstr "visi bērnu ieraksti"
+
+msgid "Leave a Review"
+msgstr "Atstāt atsauksmi"
+
+msgid "Maybe Later"
+msgstr "Varbūt vēlāk"
+
+msgid "parent post"
+msgstr "vecāka ieraksts"
+
+msgid "Password Protect"
+msgstr "Aizsargāt ar paroli"
+
+msgid "Password protected"
+msgstr "Aizsargāts ar paroli"
+
+msgid "Password protected by parent"
+msgstr "Aizsargāts ar vecāka paroli"
+
+msgid "Password protected by %s"
+msgstr "Aizsargāts ar %s paroli"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children darbībai nepieciešams PHP 8.1 vai jaunāks. Lūdzu, atjauniniet PHP vai deaktivizējiet Protect the Children."
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "to bauda, vai varētu %2$satstāt 5 zvaigžņu atsauksmi%3$s? Tas palīdz mums turpināt uzlaboties! 🙏"
+
