@@ -1,0 +1,46 @@
+# Thai translation for protect-the-children.
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the GPLv2.
+msgid ""
+msgstr ""
+"Project-Id-Version: protect-the-children\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Thai\n"
+"Language: th\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-10T06:08:40+00:00\n"
+"PO-Revision-Date: 2026-02-14 18:54+0000\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "all child posts"
+msgstr "โพสต์ย่อยทั้งหมด"
+
+msgid "Leave a Review"
+msgstr "เขียนรีวิว"
+
+msgid "Maybe Later"
+msgstr "ภายหลัง"
+
+msgid "parent post"
+msgstr "โพสต์หลัก"
+
+msgid "Password Protect"
+msgstr "ป้องกันด้วยรหัสผ่าน"
+
+msgid "Password protected"
+msgstr "ป้องกันด้วยรหัสผ่าน"
+
+msgid "Password protected by parent"
+msgstr "ป้องกันด้วยรหัสผ่านจากโพสต์หลัก"
+
+msgid "Password protected by %s"
+msgstr "ป้องกันด้วยรหัสผ่านโดย %s"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children ต้องการ PHP 8.1 หรือสูงกว่าเพื่อทำงานอย่างถูกต้อง โปรดอัพเกรด PHP หรือปิดการใช้งาน Protect the Children"
+
+msgid "re enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "หากคุณพอใจ คุณช่วย%2$sเขียนรีวิว 5 ดาว%3$sได้ไหม? มันช่วยให้เราปรับปรุงต่อไปได้! 🙏"
