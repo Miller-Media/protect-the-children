@@ -1,0 +1,46 @@
+# Romanian translation for Protect the Children
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/protect-the-children/issues\n"
+"POT-Creation-Date: 2026-02-15 15:00+0000\n"
+"PO-Revision-Date: 2026-02-15 15:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Romanian\n"
+"Language: ro_RO\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1 ? 0 : (n==0 || (n%100>0 && n%100<20)) ? 1 : 2);\n"
+
+msgid "all child posts"
+msgstr "toate postările copil"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Salut! Folosiți %1$s de ceva timp. Dacă vă place, ați putea %2$slăsa o recenzie de 5 stele%3$s? Ne ajută să continuăm să ne îmbunătățim! 🙏"
+
+msgid "Leave a Review"
+msgstr "Lăsați o recenzie"
+
+msgid "Maybe Later"
+msgstr "Poate mai târziu"
+
+msgid "parent post"
+msgstr "postare părinte"
+
+msgid "Password Protect"
+msgstr "Protejare cu parolă"
+
+msgid "Password protected"
+msgstr "Protejat cu parolă"
+
+msgid "Password protected by %s"
+msgstr "Protejat cu parolă de %s"
+
+msgid "Password protected by parent"
+msgstr "Protejat cu parolă de postarea părinte"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children necesită PHP 8.1 sau o versiune superioară pentru a funcționa corect. Vă rugăm să actualizați PHP sau să dezactivați Protect the Children."
