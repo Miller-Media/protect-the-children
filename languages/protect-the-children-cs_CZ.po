@@ -1,0 +1,46 @@
+# Czech translation for Protect the Children
+# Copyright (C) 2026 Miller Media
+# This file is distributed under the same license as the plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children\n"
+"Report-Msgid-Bugs-To: https://github.com/Miller-Media/protect-the-children/issues\n"
+"POT-Creation-Date: 2026-02-15 13:00+0000\n"
+"PO-Revision-Date: 2026-02-15 13:00+0000\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Czech\n"
+"Language: cs_CZ\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+
+msgid "all child posts"
+msgstr "všechny podřízené příspěvky"
+
+msgid "Hey! You've been using %1$s for a while now. If you're enjoying it, would you mind %2$sleaving a 5-star review%3$s? It helps us keep improving! 🙏"
+msgstr "Ahoj! Používáte %1$s už nějakou dobu. Pokud jste spokojeni, nevadilo by vám %2$snapisat 5hvězdičkovou recenzi%3$s? Pomáhá nám to se neustále zlepšovat! 🙏"
+
+msgid "Leave a Review"
+msgstr "Napsat recenzi"
+
+msgid "Maybe Later"
+msgstr "Možná později"
+
+msgid "parent post"
+msgstr "nadřazený příspěvek"
+
+msgid "Password Protect"
+msgstr "Ochrana heslem"
+
+msgid "Password protected"
+msgstr "Chráněno heslem"
+
+msgid "Password protected by parent"
+msgstr "Chráněno heslem nadřazeného příspěvku"
+
+msgid "Password protected by %s"
+msgstr "Chráněno heslem příspěvku %s"
+
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Protect the Children vyžaduje PHP 8.1 nebo novější. Aktualizujte prosím PHP nebo deaktivujte plugin Protect the Children."
