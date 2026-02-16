@@ -1,0 +1,71 @@
+# Copyright (C) 2026 Miller Media (Matt Miller)
+# This file is distributed under the same license as the Protect the Children! plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children! 1.4.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Macedonian\n"
+"Language: mk_MK\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-09T19:13:17+00:00\n"
+"PO-Revision-Date: 2026-02-16\n"
+"Plural-Forms: nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: protect-the-children\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "Protect the Children!"
+msgstr "Заштити ги подстраниците!"
+
+#. Description of the plugin
+#: index.php
+msgid "Easily password protect the child pages/posts of a post that is password protected."
+msgstr "Лесно заштитете со лозинка подстраниците/објавите на објава која е заштитена со лозинка."
+
+#. Author of the plugin
+#: index.php
+msgid "Miller Media (Matt Miller)"
+msgstr "Miller Media (Matt Miller)"
+
+#. Author URI of the plugin
+#: index.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: index.php:21
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "Заштити ги подстраниците бара PHP 8.1 или понова верзија за правилно функционирање. Ве молиме надградете го PHP или деактивирајте го додатокот."
+
+#: _inc/admin.php:126
+#: src/index.js:21
+msgid "Password Protect"
+msgstr "Заштита со лозинка"
+
+#: _inc/admin.php:126
+msgid "all child posts"
+msgstr "сите подстраници"
+
+#: _inc/admin.php:181
+msgid "Password protected by parent"
+msgstr "Заштитено со лозинка од родителската страница"
+
+#: _inc/admin.php:206
+msgid "Password protected"
+msgstr "Заштитено со лозинка"
+
+#: _inc/admin.php:214
+#, php-format
+msgid "Password protected by %s"
+msgstr "Заштитено со лозинка од %s"
+
+#: _inc/admin.php:214
+msgid "parent post"
+msgstr "родителска објава"
+
+#: src/index.js:21
+msgid "all children"
+msgstr "сите подстраници"
