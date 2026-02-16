@@ -61,6 +61,28 @@ This plugin is available in the following languages:
 2. Activate the plugin through the 'Plugins' screen in WordPress
 3. On any post or page, click 'Edit' next to Visibility, change the post to 'Password Protected' and an optional checkbox to turn on protection of that page's children will appear.
 
+== Frequently Asked Questions ==
+
+= How do I protect child pages? =
+
+Edit the parent page, set its Visibility to "Password Protected", enter a password, and check the "Protect child pages" checkbox. All child and grandchild pages will automatically be protected with the same password.
+
+= Does it work with custom post types? =
+
+Yes! As of version 1.3.9, the plugin fully supports custom post types that have hierarchical (parent/child) relationships.
+
+= Do users need to enter the password for every child page? =
+
+No. Once a user enters the password on any protected page (parent or child), all related pages are unlocked for that session.
+
+= Does it work with the Gutenberg block editor? =
+
+Yes. The plugin supports both the classic editor and the Gutenberg block editor (WordPress 5.0+). The protection checkbox appears in the Visibility settings panel.
+
+= What languages are supported? =
+
+The plugin is available in 30 languages with more being added regularly. We are working toward supporting 50 languages total!
+
 == Screenshots ==
 
 1. WP 5.0+ Before changing to 'Password Protected'
