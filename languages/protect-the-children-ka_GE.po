@@ -1,0 +1,72 @@
+# Georgian translation for Protect the Children!
+# Copyright (C) 2026 Miller Media (Matt Miller)
+# This file is distributed under the same license as the Protect the Children! plugin.
+msgid ""
+msgstr ""
+"Project-Id-Version: Protect the Children! 1.4.1\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/protect-the-children\n"
+"Last-Translator: Crash Override (AI)\n"
+"Language-Team: Georgian\n"
+"Language: ka_GE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-02-16T11:22:00+00:00\n"
+"PO-Revision-Date: 2026-02-16 11:22+0000\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+"X-Generator: OpenClaw AI\n"
+"X-Domain: protect-the-children\n"
+
+#. Plugin Name of the plugin
+#: index.php
+msgid "Protect the Children!"
+msgstr "შვილობილი გვერდების დაცვა!"
+
+#. Description of the plugin
+#: index.php
+msgid "Easily password protect the child pages/posts of a post that is password protected."
+msgstr "მარტივად დაიცავით პაროლით დაცული პოსტის შვილობილი გვერდები/პოსტები პაროლით."
+
+#. Author of the plugin
+#: index.php
+msgid "Miller Media (Matt Miller)"
+msgstr "Miller Media (Matt Miller)"
+
+#. Author URI of the plugin
+#: index.php
+msgid "www.millermedia.io"
+msgstr "www.millermedia.io"
+
+#: index.php:21
+msgid "Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children."
+msgstr "შვილობილი გვერდების დაცვა მოითხოვს PHP 8.1 ან უფრო ახალ ვერსიას სწორად მუშაობისთვის. გთხოვთ, განაახლოთ PHP ან გამორთოთ შვილობილი გვერდების დაცვა."
+
+#: _inc/admin.php:126
+#: src/index.js:21
+msgid "Password Protect"
+msgstr "პაროლით დაცვა"
+
+#: _inc/admin.php:126
+msgid "all child posts"
+msgstr "ყველა შვილობილი პოსტი"
+
+#: _inc/admin.php:181
+msgid "Password protected by parent"
+msgstr "დაცულია მშობელი პოსტის პაროლით"
+
+#: _inc/admin.php:206
+msgid "Password protected"
+msgstr "დაცულია პაროლით"
+
+#: _inc/admin.php:214
+#, php-format
+msgid "Password protected by %s"
+msgstr "დაცულია %s-ის პაროლით"
+
+#: _inc/admin.php:214
+msgid "parent post"
+msgstr "მშობელი პოსტი"
+
+#: src/index.js:21
+msgid "all children"
+msgstr "ყველა შვილობილი"
