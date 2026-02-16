@@ -8,6 +8,8 @@ class ProtectTheChildren {
 
     public function __construct()
     {
+        add_action( 'admin_menu', array( $this, 'register_settings_page' ) );
+        add_action( 'admin_init', array( $this, 'register_settings' ) );
         add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
         add_action( 'save_post', array( $this, 'ptc_save_post_meta' ), 10, 3 );
         add_action( 'post_submitbox_misc_actions', array( $this, 'add_classic_checkbox' ) );
@@ -256,6 +258,52 @@ class ProtectTheChildren {
             array( 'wp-blocks', 'wp-element', 'wp-components', 'wp-i18n' )
         );
         wp_set_script_translations( 'ptc-myguten-script', 'protect-the-children' );
+    }
+
+    /**
+     * Register the settings page under the Settings menu.
+     */
+    public function register_settings_page() {
+        add_options_page(
+            __( 'Protect the Children', 'protect-the-children' ),
+            __( 'Protect the Children', 'protect-the-children' ),
+            'manage_options',
+            'ptc_settings',
+            array( $this, 'render_settings_page' )
+        );
+    }
+
+    /**
+     * Register the uninstall setting.
+     */
+    public function register_settings() {
+        register_setting( 'ptc_settings_group', 'ptc_delete_data_on_uninstall' );
+    }
+
+    /**
+     * Render the settings page.
+     */
+    public function render_settings_page() {
+        ?>
+        <div class="wrap">
+            <h1><?php esc_html_e( 'Protect the Children Settings', 'protect-the-children' ); ?></h1>
+            <form method="post" action="options.php">
+                <?php settings_fields( 'ptc_settings_group' ); ?>
+                <table class="form-table">
+                    <tr>
+                        <th scope="row"><?php esc_html_e( 'Remove all plugin data when deleted', 'protect-the-children' ); ?></th>
+                        <td>
+                            <label>
+                                <input type="checkbox" name="ptc_delete_data_on_uninstall" value="1" <?php checked( get_option( 'ptc_delete_data_on_uninstall' ), '1' ); ?>>
+                                <?php esc_html_e( 'Check this box if you want all plugin settings and data to be removed when the plugin is deleted.', 'protect-the-children' ); ?>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+                <?php submit_button(); ?>
+            </form>
+        </div>
+        <?php
     }
 
     /**
