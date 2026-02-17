@@ -2,11 +2,11 @@
 /**
  * Plugin Name: Protect the Children!
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version:           1.5.1
+ * Version:           1.5.2
  * Author: Miller Media (Matt Miller)
  * Author URI: https://mattmiller.ai
  * Requires PHP: 8.1
- * Tested up to: 6.9.1
+ * Tested up to: 6.9
  * Text Domain: protect-the-children
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( ! defined( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION' ) ) {
-    define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.5.1' );
+    define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.5.2' );
 }
 
 if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
@@ -31,10 +31,6 @@ if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
 
 define( 'PTC_PLUGIN_PATH', plugin_dir_path(__FILE__) );
 define( 'PTC_PLUGIN_URL', plugin_dir_url(__FILE__) );
-
-add_action('plugins_loaded', function() {
-    load_plugin_textdomain('protect-the-children', false, dirname(plugin_basename(__FILE__)) . '/languages');
-}, 5);
 
 require_once( PTC_PLUGIN_PATH . '_inc/helpers.php' );
 require_once( PTC_PLUGIN_PATH . '_inc/admin.php' );

@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 class ProtectTheChildren {
 
     /**
@@ -140,8 +144,8 @@ class ProtectTheChildren {
         }
 
         if ( ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
-            $checked = get_post_meta( $post->ID, 'protect_children', true ) ? "checked" : "";
-            echo "<div id=\"protect-children-div\"><input type=\"checkbox\" " . $checked . " name=\"protect_children\" /><strong>" . esc_html__('Password Protect', 'protect-the-children') . "</strong> " . esc_html__('all child posts', 'protect-the-children') . "</div>";
+            $is_checked = (bool) get_post_meta( $post->ID, 'protect_children', true );
+            echo '<div id="protect-children-div"><input type="checkbox"' . checked( $is_checked, true, false ) . ' name="protect_children" /><strong>' . esc_html__('Password Protect', 'protect-the-children') . '</strong> ' . esc_html__('all child posts', 'protect-the-children') . '</div>';
         }
 
     }
@@ -229,7 +233,11 @@ class ProtectTheChildren {
                     // Add 'Password protect by parent post' notice under visibility section
                     $regex_pattern = '/(<\/div>)(<\!-- \.misc-pub-section -->)(\n*.*)(<div class="misc-pub-section curtime misc-pub-curtime">)/i';
                     $admin_edit_link = sprintf( admin_url( 'post.php?post=%d&action=edit' ), $protected_parent );
-                    $update_pattern = sprintf( '<br><span class="wp-media-buttons-icon password-protect-admin-notice">' . __('Password protected by %s', 'protect-the-children') . '</span>$1$2$3$4$5', '<a href="' . esc_url($admin_edit_link) . '">' . esc_html__('parent post', 'protect-the-children') . '</a>' );
+                    $update_pattern = sprintf(
+                        /* translators: %s: link to parent post edit screen */
+                        '<br><span class="wp-media-buttons-icon password-protect-admin-notice">' . __('Password protected by %s', 'protect-the-children') . '</span>$1$2$3$4$5',
+                        '<a href="' . esc_url($admin_edit_link) . '">' . esc_html__('parent post', 'protect-the-children') . '</a>'
+                    );
                     $buffer = preg_replace( $regex_pattern, $update_pattern, $buffer );
                     
                 }
@@ -277,7 +285,9 @@ class ProtectTheChildren {
      * Register the uninstall setting.
      */
     public function register_settings() {
-        register_setting( 'ptc_settings_group', 'ptc_delete_data_on_uninstall' );
+        register_setting( 'ptc_settings_group', 'ptc_delete_data_on_uninstall', array(
+            'sanitize_callback' => 'absint',
+        ) );
     }
 
     /**
