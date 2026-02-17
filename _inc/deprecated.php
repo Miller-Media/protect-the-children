@@ -1,5 +1,9 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 /*
 Deprecated functions moved to class.
 These functions may be removed in a future version.
@@ -12,9 +16,9 @@ function _ptc_deprecated_warning( $function, $version, $replacement = null ) {
 
 	if ( WP_DEBUG && apply_filters( 'deprecated_function_trigger_error', true ) ) {
 		if ( ! is_null( $replacement ) ) {
-			trigger_error( sprintf( '%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.', $function, $version, $replacement ) );
+			trigger_error( sprintf( '%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead.', esc_html( $function ), esc_html( $version ), esc_html( $replacement ) ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error
 		} else {
-			trigger_error( sprintf( '%1$s is <strong>deprecated</strong> since version %2$s with no alternative available.', $function, $version ) );
+			trigger_error( sprintf( '%1$s is <strong>deprecated</strong> since version %2$s with no alternative available.', esc_html( $function ), esc_html( $version ) ) ); // phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_trigger_error
 		}
 	}
 
