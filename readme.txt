@@ -2,10 +2,10 @@
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
 Tags: password protect, child pages, parent pages, visibility, password
 Tested up to: 6.9.1
-Stable tag: 1.5.0
+Stable tag: 1.5.1
 Requires PHP: 8.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License: GPL-2.0-or-later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Easily password protect the child pages/posts of a post/page that is password protected.
 
@@ -114,6 +114,13 @@ The plugin is available in 30 languages with more being added regularly. We are 
 7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.5.1 =
+* Added GPL license declaration to plugin header
+* Updated Author URI
+* Added direct file access protection to all PHP files
+* Improved output escaping and input sanitization
+* Removed non-production files from plugin directory
 
 = 1.5.0 =
 * Added translations for 50 languages

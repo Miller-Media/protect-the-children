@@ -2,23 +2,29 @@
 /**
  * Plugin Name: Protect the Children!
  * Description: Easily password protect the child pages/posts of a post that is password protected.
- * Version:           1.5.0
+ * Version:           1.5.1
  * Author: Miller Media (Matt Miller)
- * Author URI: www.millermedia.io
+ * Author URI: https://mattmiller.ai
  * Requires PHP: 8.1
  * Tested up to: 6.9.1
  * Text Domain: protect-the-children
+ * License: GPL-2.0-or-later
+ * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Domain Path: /languages
  */
 
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
+
 if ( ! defined( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION' ) ) {
-    define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.5.0' );
+    define( 'PROTECT_THE_CHILDREN_PLUGIN_VERSION', '1.5.1' );
 }
 
 if ( version_compare( PHP_VERSION, '8.1', '<' ) ) {
     add_action( 'admin_notices', function () {
-        echo "<div class=\"error\"><p>" . __('Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children.', 'protect-the-children') . "</p></div>";
+        echo "<div class=\"error\"><p>" . wp_kses_post( __('Protect the Children requires PHP 8.1 and greater to function properly. Please upgrade PHP or deactivate Protect the Children.', 'protect-the-children') ) . "</p></div>";
     } );
     return;
 }
@@ -36,7 +42,7 @@ require_once( PTC_PLUGIN_PATH . '_inc/deprecated.php' );
 require_once( PTC_PLUGIN_PATH . '_inc/review-notice.php' );
 
 new ProtectTheChildren();
-new PTC_ReviewNotice( 'Protect the Children', 'protect-the-children', 'ptc_activated_on', 'protect-the-children', PTC_PLUGIN_URL . 'assets/icon-256x256.jpg' );
+new PTC_ReviewNotice( 'Protect the Children', 'protect-the-children', 'ptc_activated_on', 'protect-the-children', PTC_PLUGIN_URL . 'assets/plugin-icon.jpg' );
 
 /**
  * On front-end page load, check the post's parent ID
