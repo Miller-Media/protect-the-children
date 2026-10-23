@@ -74,7 +74,7 @@ add_action(
 		if ( array_key_exists( 'wp-postpass_' . COOKIEHASH, $_COOKIE ) ) {
 			require_once ABSPATH . WPINC . '/class-phpass.php';
 			$hasher   = new PasswordHash( 8, true );
-			$hash     = wp_unslash( $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] );
+			$hash     = sanitize_text_field( wp_unslash( $_COOKIE[ 'wp-postpass_' . COOKIEHASH ] ) );
 			$required = ! $hasher->CheckPassword( $parent_password, $hash );
 		}
 
