@@ -63,29 +63,32 @@ add_action( 'template_redirect', function () {
     $parent_post_object = is_int( $parent_post ) ? get_post( $parent_post ) : $parent_post;
     $parent_password = $parent_post_object->post_password;
 
-    // If password cookie does not exist, return password check
-    if( !array_key_exists('wp-postpass_' . COOKIEHASH, $_COOKIE) ) {
-        add_filter( 'post_password_required', function () {
-            return true;
-        } );
+    $required = true;
 
-        return;
+    // If the password cookie exists, check it against the protecting ancestor's password
+    if ( array_key_exists( 'wp-postpass_' . COOKIEHASH, $_COOKIE ) ) {
+        require_once ABSPATH . WPINC . '/class-phpass.php';
+        $hasher = new PasswordHash( 8, true );
+        $hash = wp_unslash( $_COOKIE['wp-postpass_' . COOKIEHASH] );
+        $required = ! $hasher->CheckPassword( $parent_password, $hash );
     }
-
-    // Check the cookie (hashed password)
-    require_once ABSPATH . WPINC . '/class-phpass.php';
-    $hasher = new PasswordHash( 8, true );
-    $hash = wp_unslash( $_COOKIE['wp-postpass_' . COOKIEHASH] );
-    $required = ! $hasher->CheckPassword( $parent_password, $hash );
 
     // If password has already been entered on the parent post, continue to page
     if ( ! $required ) {
         return;
     }
 
-    add_filter( 'post_password_required', function () {
-        return true;
-    } );
+    // Only force the password requirement for the post currently being viewed.
+    // Scoping to $post_id keeps this from leaking onto unrelated posts that
+    // other code (nav/widget queries, page builder templates) may also run
+    // post_password_required() against during the same request.
+    add_filter( 'post_password_required', function ( $required, $post ) use ( $post_id ) {
+        if ( $post && (int) $post->ID === (int) $post_id ) {
+            return true;
+        }
+
+        return $required;
+    }, 10, 2 );
 
 } );
 
