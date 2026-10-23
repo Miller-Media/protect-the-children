@@ -115,6 +115,14 @@ class ProtectTheChildren {
             return;
         }
 
+        // Only our own classic-editor checkbox field submits this nonce. Any other
+        // save path that posts to this hook (Elementor's AJAX save, other plugins'
+        // wp_update_post() calls, etc.) won't include it, so the field being absent
+        // from $_POST can't be mistaken for the user explicitly unchecking the box.
+        if ( ! isset( $_POST['ptc_save_post_meta_nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['ptc_save_post_meta_nonce'] ) ), 'ptc_save_post_meta' ) ) {
+            return;
+        }
+
         // Only update protect_children meta if the post is password protected
         if ( ! ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
             // If post is not password protected, clear the meta (protection shouldn't apply)
@@ -142,6 +150,10 @@ class ProtectTheChildren {
         if( ! ProtectTheChildren_Helpers::supportsPTC( $post ) ) {
             return;
         }
+
+        // Always render the nonce so ptc_save_post_meta() can tell our own classic
+        // metabox submission apart from any other save path that posts to save_post.
+        wp_nonce_field( 'ptc_save_post_meta', 'ptc_save_post_meta_nonce' );
 
         if ( ProtectTheChildren_Helpers::isPasswordProtected( $post ) ) {
             $is_checked = (bool) get_post_meta( $post->ID, 'protect_children', true );
