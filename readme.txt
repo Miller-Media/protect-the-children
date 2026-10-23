@@ -2,7 +2,7 @@
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
 Tags: password protect, child pages, parent pages, visibility, password
 Tested up to: 7.1
-Stable tag: 1.5.2
+Stable tag: 1.5.3
 Requires PHP: 8.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -114,6 +114,11 @@ The plugin is available in 30 languages with more being added regularly. We are 
 7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.5.3 =
+* Fixed: saving a parent page from Elementor, or from any other save path that doesn't submit the plugin's own checkbox (such as another plugin calling wp_update_post()), no longer turns off "Password Protect all children"
+* Fixed: the forced password requirement on a protected child page no longer applies to other posts checked during the same page load, which could cause extra password prompts on unrelated content
+* Tested up to WordPress 7.1
 
 = 1.5.2 =
 * Added ABSPATH checks to _inc/admin.php, _inc/deprecated.php, _inc/review-notice.php
