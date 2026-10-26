@@ -1,4 +1,32 @@
-# Protect the Children
+<p align="center">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&color=2271B1&center=true&vCenter=true&width=500&lines=Protect+the+Children" alt="Protect the Children" />
+</p>
+
+<p align="center">
+<pre align="center">
+ ___ _____ ___
+| _ \_   _/ __|
+|  _/ | || (__
+|_|   |_| \___|
+</pre>
+</p>
+
+<p align="center">
+  <strong>Easily password protect the child pages and posts of a password-protected page or post.</strong>
+</p>
+
+<p align="center">
+  <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/v/protect-the-children?style=flat-square" alt="WordPress.org Plugin Version"></a>
+  <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/tested/protect-the-children?style=flat-square" alt="Tested up to"></a>
+  <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/dt/protect-the-children?style=flat-square" alt="Downloads"></a>
+  <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/installs/protect-the-children?style=flat-square" alt="Active Installs"></a>
+  <a href="https://www.gnu.org/licenses/gpl-2.0.html"><img src="https://img.shields.io/badge/license-GPLv2%2B-blue?style=flat-square" alt="License"></a>
+  <img src="https://img.shields.io/wordpress/plugin/required-php/protect-the-children?style=flat-square&logo=php&logoColor=white" alt="PHP Version">
+  <a href="https://github.com/Miller-Media/protect-the-children/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/Miller-Media/protect-the-children/ci.yml?label=tests&style=flat-square" alt="Tests"></a>
+</p>
+
+---
+
 Our plugin can be downloaded for free from the WordPress repository here:
 https://wordpress.org/plugins/protect-the-children/
 
