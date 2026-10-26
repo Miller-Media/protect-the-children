@@ -1,13 +1,13 @@
-<p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=700&size=28&pause=1000&color=2271B1&center=true&vCenter=true&width=500&lines=Protect+the+Children" alt="Protect the Children" />
-</p>
+<h1 align="center">Protect the Children</h1>
 
 <p align="center">
 <pre align="center">
- ___ _____ ___
-| _ \_   _/ __|
-|  _/ | || (__
-|_|   |_| \___|
+     ___ _____ ___
+    | _ \_   _/ __|
+    |  _/ | || (__
+    |_|   |_| \___|
+&nbsp;
+[ protect the children ]
 </pre>
 </p>
 
@@ -18,7 +18,6 @@
 <p align="center">
   <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/v/protect-the-children?style=flat-square" alt="WordPress.org Plugin Version"></a>
   <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/tested/protect-the-children?style=flat-square" alt="Tested up to"></a>
-  <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/dt/protect-the-children?style=flat-square" alt="Downloads"></a>
   <a href="https://wordpress.org/plugins/protect-the-children/"><img src="https://img.shields.io/wordpress/plugin/installs/protect-the-children?style=flat-square" alt="Active Installs"></a>
   <a href="https://www.gnu.org/licenses/gpl-2.0.html"><img src="https://img.shields.io/badge/license-GPLv2%2B-blue?style=flat-square" alt="License"></a>
   <img src="https://img.shields.io/wordpress/plugin/required-php/protect-the-children?style=flat-square&logo=php&logoColor=white" alt="PHP Version">
@@ -27,8 +26,9 @@
 
 ---
 
-Our plugin can be downloaded for free from the WordPress repository here:
-https://wordpress.org/plugins/protect-the-children/
+Password protect a page and all of its child and grandchild pages in one click. After setting a post's visibility to *Password Protected*, tick the checkbox to protect its children too.
+
+Available for free on [WordPress.org](https://wordpress.org/plugins/protect-the-children/).
 
 ## Support Development
 
