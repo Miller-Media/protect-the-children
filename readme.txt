@@ -1,5 +1,6 @@
 === Protect the Children! ===
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
+Donate link: https://www.buymeacoffee.com/yOd1JU9MQe
 Tags: password protect, child pages, parent pages, visibility, password
 Tested up to: 7.1
 Stable tag: 1.5.3
@@ -20,6 +21,8 @@ Do you have a password protected post or page that has child (and grandchild) pa
 Once you choose the 'Visibility' option on a post and update it to 'Password Protected', you will be given a checkbox where you can opt into protecting all of that post's children and grandchildren.
 
 PROTECT THE CHILDREN!
+
+If this plugin helps you, you can support its development at https://www.buymeacoffee.com/yOd1JU9MQe
 
 == Localizations ==
 This plugin is available in the following languages:
