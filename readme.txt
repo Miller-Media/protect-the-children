@@ -1,6 +1,6 @@
 === Protect the Children! ===
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
-Donate link: https://www.buymeacoffee.com/yOd1JU9MQe
+Donate link: https://www.buymeacoffee.com/yOd1JU9MQe?utm_source=wordpress.org&utm_medium=plugin-readme&utm_campaign=protect-the-children&utm_content=donate-header
 Tags: password protect, child pages, parent pages, visibility, password
 Tested up to: 7.1
 Stable tag: 1.5.3
@@ -22,7 +22,7 @@ Once you choose the 'Visibility' option on a post and update it to 'Password Pro
 
 PROTECT THE CHILDREN!
 
-If this plugin helps you, you can support its development at https://www.buymeacoffee.com/yOd1JU9MQe
+If this plugin helps you, you can support its development at https://www.buymeacoffee.com/yOd1JU9MQe?utm_source=wordpress.org&utm_medium=plugin-readme&utm_campaign=protect-the-children&utm_content=description
 
 == Localizations ==
 This plugin is available in the following languages:
