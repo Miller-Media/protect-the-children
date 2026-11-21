@@ -6,7 +6,6 @@
  * Author: Miller Media (Matt Miller)
  * Author URI: https://mattmiller.ai
  * Requires PHP: 8.1
- * Tested up to: 7.1
  * Text Domain: protect-the-children
  * License: GPL-2.0-or-later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
