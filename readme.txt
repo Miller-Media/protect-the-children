@@ -3,7 +3,7 @@ Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmos
 Donate link: https://www.buymeacoffee.com/yOd1JU9MQe?utm_source=wordpress.org&utm_medium=plugin-readme&utm_campaign=protect-the-children&utm_content=donate-header
 Tags: password protect, child pages, parent pages, visibility, password
 Tested up to: 7.1
-Stable tag: 1.5.3
+Stable tag: 1.5.4
 Requires PHP: 8.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -117,6 +117,11 @@ The plugin is available in 30 languages with more being added regularly. We are 
 7. WP <5.0 Child posts displayed as protected by parent
 
 == Changelog ==
+
+= 1.5.4 =
+* Hardened request handling with nonce and capability checks, input sanitization, prepared SQL, and output escaping
+* Removed the "Tested up to" field from the plugin file header so it appears only in readme.txt, as required by Plugin Check
+* Added a donate link for supporting plugin development
 
 = 1.5.3 =
 * Fixed: saving a parent page from Elementor, or from any other save path that doesn't submit the plugin's own checkbox (such as another plugin calling wp_update_post()), no longer turns off "Password Protect all children"
