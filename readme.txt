@@ -2,7 +2,7 @@
 Contributors: millermedianow, millermediadev, mohsinrasool, deltafactory, danmossop, ad_taylor
 Donate link: https://www.buymeacoffee.com/yOd1JU9MQe?utm_source=wordpress.org&utm_medium=plugin-readme&utm_campaign=protect-the-children&utm_content=donate-header
 Tags: password protect, child pages, parent pages, visibility, password
-Tested up to: 7.1
+Tested up to: 7.2
 Stable tag: 1.5.4
 Requires PHP: 8.1
 License: GPL-2.0-or-later
